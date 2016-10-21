@@ -7,7 +7,8 @@
 
 #include "Course.hpp"
 
-Course::Course()
+Course::Course(std::string aNaam, unsigned short aCourseID)
+:naam(aNaam), courseID(aCourseID)
 {
 	// TODO Auto-generated constructor stub
 

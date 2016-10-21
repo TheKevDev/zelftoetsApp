@@ -17,13 +17,13 @@ class Onderwerp;
 class Course
 {
 public:
-	Course();
+	Course(std::string aNaam, unsigned short aCourseID);
 	virtual ~Course();
 	Onderwerp kiesOnderwerp();
 	void addOnderwerp();
 private:
 	std::string naam;
-	short courseID;
+	unsigned short courseID;
 };
 
 #endif /* COURSE_HPP_ */

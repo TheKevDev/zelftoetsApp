@@ -11,8 +11,11 @@
 class Onderwerp
 {
 public:
-	Onderwerp();
+	Onderwerp(const std::string& aNaam,	unsigned short aOnderwerpID);
 	virtual ~Onderwerp();
+private:
+	std::string naam;
+	unsigned short onderwerpID;
 };
 
 #endif /* ONDERWERP_HPP_ */

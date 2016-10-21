@@ -18,7 +18,7 @@ class Vraag;
 class Gebruiker
 {
 public:
-	Gebruiker();
+	Gebruiker(const std::string& aUsername, const std::string& aWachtwoord);
 	virtual ~Gebruiker();
 	void addScore();
 	void addGebruik();
@@ -27,7 +27,7 @@ public:
 private:
 	std::string username;
 	std::string wachtwoord;
-	long score;
+	unsigned long score;
 	std::vector<Vraag> gebruik;
 };
 

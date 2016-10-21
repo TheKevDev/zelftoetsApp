@@ -7,7 +7,8 @@
 
 #include "Semester.hpp"
 
-Semester::Semester()
+Semester::Semester(const std::string& aNaam,unsigned short aSemesterID)
+:naam(aNaam),semesterID(aSemesterID)
 {
 	// TODO Auto-generated constructor stub
 

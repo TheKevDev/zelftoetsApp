@@ -11,8 +11,11 @@
 class Semester
 {
 public:
-	Semester();
+	Semester(const std::string& aNaam,unsigned short aSemesterID);
 	virtual ~Semester();
+private:
+	std::string naam;
+	unsigned short semesterID;
 };
 
 #endif /* SEMESTER_HPP_ */
