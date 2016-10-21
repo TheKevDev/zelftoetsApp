@@ -12,6 +12,8 @@ class IVraag
 {
 public:
 	virtual ~IVraag() {};
+	virtual const Vraag& getVraag()=0;
+	virtual bool beantwoordVraag()=0;
 };
 
 #endif /* IVRAAG_HPP_ */

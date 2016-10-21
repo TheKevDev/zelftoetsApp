@@ -8,11 +8,17 @@
 #ifndef OPENVRAAG_HPP_
 #define OPENVRAAG_HPP_
 
+#include <vector>
+#include <string>
+
 class OpenVraag
 {
 public:
 	OpenVraag();
 	virtual ~OpenVraag();
+private:
+	std::string vraag;
+	std::vector<std::string> antwoorden;
 };
 
 #endif /* OPENVRAAG_HPP_ */

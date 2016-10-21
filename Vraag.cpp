@@ -18,3 +18,6 @@ Vraag::~Vraag()
 	// TODO Auto-generated destructor stub
 }
 
+void Vraag::printVraag()
+{
+}

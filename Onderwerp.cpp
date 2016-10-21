@@ -19,3 +19,14 @@ Onderwerp::~Onderwerp()
 	// TODO Auto-generated destructor stub
 }
 
+Toets Onderwerp::maakToets()
+{
+}
+
+void Onderwerp::addMeerkeuzeVraag()
+{
+}
+
+void Onderwerp::addOpenVraag()
+{
+}

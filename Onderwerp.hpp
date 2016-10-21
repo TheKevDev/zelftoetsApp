@@ -8,14 +8,23 @@
 #ifndef ONDERWERP_HPP_
 #define ONDERWERP_HPP_
 
+#include <string>
+
+#include "Toets.hpp"
+
+class Toets;
+
 class Onderwerp
 {
 public:
 	Onderwerp(const std::string& aNaam,	unsigned short aOnderwerpID);
 	virtual ~Onderwerp();
+	Toets maakToets();
+	void addMeerkeuzeVraag();
+	void addOpenVraag();
 private:
 	std::string naam;
-	unsigned short onderwerpID;
+	long onderwerpID;
 };
 
 #endif /* ONDERWERP_HPP_ */

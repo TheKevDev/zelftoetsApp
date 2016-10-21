@@ -8,11 +8,16 @@
 #ifndef TOETS_HPP_
 #define TOETS_HPP_
 
+#include "Vraag.hpp"
+
+class Vraag;
+
 class Toets
 {
 public:
 	Toets();
 	virtual ~Toets();
+	Vraag getVraag();
 };
 
 #endif /* TOETS_HPP_ */

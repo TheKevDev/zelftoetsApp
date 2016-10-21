@@ -18,3 +18,6 @@ Toets::~Toets()
 	// TODO Auto-generated destructor stub
 }
 
+Vraag Toets::getVraag()
+{
+}

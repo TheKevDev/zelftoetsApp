@@ -19,3 +19,10 @@ Semester::~Semester()
 	// TODO Auto-generated destructor stub
 }
 
+void Semester::addCourse()
+{
+}
+
+Course Semester::kiesCourse()
+{
+}
