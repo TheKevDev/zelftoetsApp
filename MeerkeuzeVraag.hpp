@@ -8,11 +8,16 @@
 #ifndef MEERKEUZEVRAAG_HPP_
 #define MEERKEUZEVRAAG_HPP_
 
+#include <string>
+
 class MeerkeuzeVraag
 {
 public:
 	MeerkeuzeVraag();
 	virtual ~MeerkeuzeVraag();
+	bool isAntwoordCorrect();
+private:
+	std::string vraag;
 };
 
 #endif /* MEERKEUZEVRAAG_HPP_ */

@@ -18,3 +18,10 @@ Course::~Course()
 	// TODO Auto-generated destructor stub
 }
 
+Onderwerp Course::kiesOnderwerp()
+{
+}
+
+void Course::addOnderwerp()
+{
+}

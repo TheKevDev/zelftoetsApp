@@ -18,3 +18,7 @@ MeerkeuzeVraag::~MeerkeuzeVraag()
 	// TODO Auto-generated destructor stub
 }
 
+bool MeerkeuzeVraag::isAntwoordCorrect()
+{
+	return false;
+}

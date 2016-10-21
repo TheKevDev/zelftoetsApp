@@ -18,3 +18,19 @@ Gebruiker::~Gebruiker()
 	// TODO Auto-generated destructor stub
 }
 
+void Gebruiker::addScore()
+{
+}
+
+void Gebruiker::addGebruik()
+{
+}
+
+std::string Gebruiker::getAntwoordGebruiker()
+{
+	return "";
+}
+
+void Gebruiker::gebruikApp()
+{
+}
