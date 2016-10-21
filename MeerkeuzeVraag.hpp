@@ -10,7 +10,7 @@
 
 #include <string>
 
-class MeerkeuzeVraag
+class MeerkeuzeVraag:public Vraag
 {
 public:
 	MeerkeuzeVraag();

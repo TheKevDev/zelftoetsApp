@@ -10,15 +10,15 @@
 
 #include <string>
 
-class Vraag
+class Vraag:public IVraag
 {
 public:
-	Vraag();
+	Vraag(const std::string& aVraag,unsigned char aComplexiteit);
 	virtual ~Vraag();
 	void printVraag();
 private:
 	std::string vraag;
-	char complexiteit;
+	unsigned char complexiteit;
 };
 
 #endif /* VRAAG_HPP_ */

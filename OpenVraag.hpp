@@ -11,7 +11,7 @@
 #include <vector>
 #include <string>
 
-class OpenVraag
+class OpenVraag:public Vraag
 {
 public:
 	OpenVraag();

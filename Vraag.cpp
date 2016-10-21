@@ -7,9 +7,9 @@
 
 #include "Vraag.hpp"
 
-Vraag::Vraag()
+Vraag::Vraag(const std::string& aVraag,unsigned char aComplexiteit)
+:vraag(aVraag), complexiteit(aComplexiteit)
 {
-	// TODO Auto-generated constructor stub
 
 }
 
