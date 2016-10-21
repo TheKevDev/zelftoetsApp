@@ -8,11 +8,22 @@
 #ifndef SEMESTER_HPP_
 #define SEMESTER_HPP_
 
+#include <string>
+
+#include "Course.hpp"
+
+class Course;
+
 class Semester
 {
 public:
 	Semester();
 	virtual ~Semester();
+	void addCourse();
+	Course kiesCourse();
+private:
+	std::string naam;
+	long semesterID;
 };
 
 #endif /* SEMESTER_HPP_ */
