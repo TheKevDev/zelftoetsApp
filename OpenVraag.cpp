@@ -19,5 +19,15 @@ OpenVraag::~OpenVraag()
 }
 
 bool OpenVraag::beantwoordVraag(std::string antwoord){
-	return false;
+	unsigned long aantalKernWoordenGevonden = 0;
+	for(std::string& woord:kernwoorden){
+		std::size_t found = antwoord.find(woord);
+		if (found!=std::string::npos) {
+			++aantalKernWoordenGevonden;
+		}
+	}
+	if(aantalKernWoordenGevonden == kernwoorden.size()) {
+		return false;
+	}
+	return true;
 }
