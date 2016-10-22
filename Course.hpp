@@ -19,7 +19,7 @@ public:
 	Course(const std::string aNaam, const unsigned short aCourseID);
 	virtual ~Course();
 	Onderwerp kiesOnderwerp();
-	void addOnderwerp(Onderwerp o);
+	void addOnderwerp(const Onderwerp& o);
 private:
 	std::string naam;
 	unsigned short courseID;

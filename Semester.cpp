@@ -19,7 +19,7 @@ Semester::~Semester()
 	// TODO Auto-generated destructor stub
 }
 
-void Semester::addCourse(Course c)
+void Semester::addCourse(const Course& c)
 {
 	semesterCourses.push_back(c);
 }

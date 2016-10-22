@@ -24,7 +24,7 @@ Onderwerp Course::kiesOnderwerp()
 	return courseOnderwerpen.front();
 }
 
-void Course::addOnderwerp(Onderwerp o)
+void Course::addOnderwerp(const Onderwerp& o)
 {
 	courseOnderwerpen.push_back(o);
 }
