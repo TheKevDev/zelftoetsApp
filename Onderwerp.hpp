@@ -9,6 +9,7 @@
 #define ONDERWERP_HPP_
 
 #include <string>
+#include <vector>
 
 #include "Toets.hpp"
 
@@ -20,11 +21,13 @@ public:
 	Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID);
 	virtual ~Onderwerp();
 	Toets maakToets();
-	void addMeerkeuzeVraag();
-	void addOpenVraag();
+	void addMeerkeuzeVraag(const Vraag& aVraag);
+	void addOpenVraag(const Vraag& aVraag);
 private:
 	std::string naam;
 	long onderwerpID;
+	std::vector<Vraag> meerkeuzeVragen;
+	std::vector<Vraag> openVragen;
 };
 
 #endif /* ONDERWERP_HPP_ */

@@ -23,10 +23,13 @@ Toets Onderwerp::maakToets()
 {
 }
 
-void Onderwerp::addMeerkeuzeVraag()
+void Onderwerp::addMeerkeuzeVraag(const Vraag& aVraag)
 {
+	meerkeuzeVragen.push_back(aVraag);
+
 }
 
-void Onderwerp::addOpenVraag()
+void Onderwerp::addOpenVraag(const Vraag& aVraag)
 {
+	openVragen.push_back(aVraag);
 }
