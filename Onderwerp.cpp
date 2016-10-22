@@ -7,7 +7,7 @@
 
 #include "Onderwerp.hpp"
 
-Onderwerp::Onderwerp(const std::string& aNaam,	unsigned short aOnderwerpID)
+Onderwerp::Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID)
 :naam(aNaam),onderwerpID(aOnderwerpID)
 {
 	// TODO Auto-generated constructor stub

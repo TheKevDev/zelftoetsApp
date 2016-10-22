@@ -9,6 +9,7 @@
 #define SEMESTER_HPP_
 
 #include <string>
+#include <vector>
 
 #include "Course.hpp"
 
@@ -17,13 +18,14 @@ class Course;
 class Semester
 {
 public:
-	Semester(const std::string& aNaam,unsigned short aSemesterID);
+	Semester(const std::string& aNaam, const unsigned short aSemesterID);
 	virtual ~Semester();
-	void addCourse();
+	void addCourse(Course c);
 	Course kiesCourse();
 private:
 	std::string naam;
 	long semesterID;
+	std::vector<Course> semesterCourses;
 };
 
 #endif /* SEMESTER_HPP_ */

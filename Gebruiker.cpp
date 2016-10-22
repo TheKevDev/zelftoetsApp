@@ -18,32 +18,19 @@ Gebruiker::~Gebruiker()
 	// TODO Auto-generated destructor stub
 }
 
-/**
- * Functie voegt de aantal gescoorde punten toe.
- */
 void Gebruiker::addScore()
 {
 }
 
-/**
- * Functie voegt de vraag die beantwoord is door de gebruiker toe aan zijn gebruik
- */
 void Gebruiker::addGebruik()
 {
 }
 
-/**
- * Functie die de input van de gebruiker inleest.
- * @return De input van de gebruiker
- */
 std::string Gebruiker::getAntwoordGebruiker()
 {
 	return "";
 }
 
-/**
- *
- */
 void Gebruiker::gebruikApp()
 {
 }

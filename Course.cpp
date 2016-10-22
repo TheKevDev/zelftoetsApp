@@ -7,7 +7,7 @@
 
 #include "Course.hpp"
 
-Course::Course(std::string aNaam, unsigned short aCourseID)
+Course::Course(const std::string aNaam, const unsigned short aCourseID)
 :naam(aNaam), courseID(aCourseID)
 {
 	// TODO Auto-generated constructor stub
@@ -23,6 +23,7 @@ Onderwerp Course::kiesOnderwerp()
 {
 }
 
-void Course::addOnderwerp()
+void Course::addOnderwerp(Onderwerp o)
 {
+	courseOnderwerpen.push_back(o);
 }

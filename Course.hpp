@@ -9,6 +9,7 @@
 #define COURSE_HPP_
 
 #include <string>
+#include <vector>
 
 #include "Onderwerp.hpp"
 
@@ -17,13 +18,14 @@ class Onderwerp;
 class Course
 {
 public:
-	Course(std::string aNaam, unsigned short aCourseID);
+	Course(const std::string aNaam, const unsigned short aCourseID);
 	virtual ~Course();
 	Onderwerp kiesOnderwerp();
-	void addOnderwerp();
+	void addOnderwerp(Onderwerp o);
 private:
 	std::string naam;
 	unsigned short courseID;
+	std::vector<Onderwerp> courseOnderwerpen;
 };
 
 #endif /* COURSE_HPP_ */

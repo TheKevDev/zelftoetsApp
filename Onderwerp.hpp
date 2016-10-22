@@ -17,7 +17,7 @@ class Toets;
 class Onderwerp
 {
 public:
-	Onderwerp(const std::string& aNaam,	unsigned short aOnderwerpID);
+	Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID);
 	virtual ~Onderwerp();
 	Toets maakToets();
 	void addMeerkeuzeVraag();

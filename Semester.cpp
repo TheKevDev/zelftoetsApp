@@ -7,7 +7,7 @@
 
 #include "Semester.hpp"
 
-Semester::Semester(const std::string& aNaam,unsigned short aSemesterID)
+Semester::Semester(const std::string& aNaam, const unsigned short aSemesterID)
 :naam(aNaam),semesterID(aSemesterID)
 {
 	// TODO Auto-generated constructor stub
@@ -19,8 +19,9 @@ Semester::~Semester()
 	// TODO Auto-generated destructor stub
 }
 
-void Semester::addCourse()
+void Semester::addCourse(Course c)
 {
+	semesterCourses.push_back(c);
 }
 
 Course Semester::kiesCourse()

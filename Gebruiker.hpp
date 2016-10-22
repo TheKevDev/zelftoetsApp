@@ -20,8 +20,18 @@ class Gebruiker
 public:
 	Gebruiker(const std::string& aUsername, const std::string& aWachtwoord);
 	virtual ~Gebruiker();
+	/**
+	 * Functie voegt de aantal gescoorde punten toe.
+	 */
 	void addScore();
+	/**
+	 * Functie voegt de vraag die beantwoord is door de gebruiker toe aan zijn gebruik
+	 */
 	void addGebruik();
+	/**
+	 * Functie die de input van de gebruiker inleest.
+	 * @return De input van de gebruiker
+	 */
 	std::string getAntwoordGebruiker();
 	void gebruikApp();
 private:
