@@ -9,6 +9,7 @@
 #define VRAAG_HPP_
 
 #include <string>
+#include "IVraag.hpp"
 
 class Vraag:public IVraag
 {

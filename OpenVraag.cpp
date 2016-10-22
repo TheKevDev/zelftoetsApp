@@ -7,9 +7,9 @@
 
 #include "OpenVraag.hpp"
 
-OpenVraag::OpenVraag()
+OpenVraag::OpenVraag(const std::string& aVraag,unsigned char aComplexiteit,const std::vector<std::string>& deKernwoorden)
+:Vraag(aVraag,aComplexiteit),kernwoorden(deKernwoorden)
 {
-	// TODO Auto-generated constructor stub
 
 }
 

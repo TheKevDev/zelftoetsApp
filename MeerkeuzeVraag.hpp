@@ -10,14 +10,15 @@
 
 #include <string>
 
+#include "Vraag.hpp"
+
 class MeerkeuzeVraag:public Vraag
 {
 public:
-	MeerkeuzeVraag();
+	MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit);
 	virtual ~MeerkeuzeVraag();
 	bool isAntwoordCorrect();
 private:
-	std::string vraag;
 };
 
 #endif /* MEERKEUZEVRAAG_HPP_ */

@@ -14,11 +14,10 @@
 class OpenVraag:public Vraag
 {
 public:
-	OpenVraag();
+	OpenVraag(const std::string& aVraag,unsigned char aComplexiteit,const std::vector<std::string>& deKernwoorden);
 	virtual ~OpenVraag();
 private:
-	std::string vraag;
-	std::vector<std::string> antwoorden;
+	std::vector<std::string> kernwoorden;
 };
 
 #endif /* OPENVRAAG_HPP_ */

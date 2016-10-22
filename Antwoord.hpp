@@ -13,7 +13,7 @@
 class Antwoord
 {
 public:
-	Antwoord();
+	Antwoord(const std::string& aAntwoord,bool aCorrect);
 	virtual ~Antwoord();
 private:
 	std::string antwoord;

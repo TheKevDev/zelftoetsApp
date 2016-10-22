@@ -7,7 +7,8 @@
 
 #include "Antwoord.hpp"
 
-Antwoord::Antwoord()
+Antwoord::Antwoord(const std::string& aAntwoord,bool aCorrect)
+:antwoord(aAntwoord),correct(aCorrect)
 {
 	// TODO Auto-generated constructor stub
 
