@@ -19,8 +19,9 @@ Onderwerp::~Onderwerp()
 	// TODO Auto-generated destructor stub
 }
 
-Toets Onderwerp::maakToets()
+const Toets Onderwerp::maakToets()
 {
+	return Toets (*this);
 }
 
 void Onderwerp::addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag)
@@ -32,4 +33,14 @@ void Onderwerp::addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag)
 void Onderwerp::addOpenVraag(const OpenVraag& aVraag)
 {
 	openVragen.push_back(aVraag);
+}
+
+const MeerkeuzeVraag& Onderwerp::getMeerkeuzeVraag() const
+{
+	return meerkeuzeVragen.front();
+}
+
+const OpenVraag& Onderwerp::getOpenVraag() const
+{
+	return openVragen.front();
 }

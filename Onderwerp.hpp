@@ -23,9 +23,12 @@ class Onderwerp
 public:
 	Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID);
 	virtual ~Onderwerp();
-	Toets maakToets();
+	const Toets maakToets();
 	void addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag);
 	void addOpenVraag(const OpenVraag& aVraag);
+	const MeerkeuzeVraag& getMeerkeuzeVraag() const;
+	const OpenVraag& getOpenVraag() const;
+
 private:
 	std::string naam;
 	long onderwerpID;

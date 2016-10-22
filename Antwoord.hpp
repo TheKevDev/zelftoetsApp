@@ -14,7 +14,7 @@ class Antwoord
 {
 public:
 	enum Keuzes {A,B,C,D};
-	Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect);
+	Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect=false);
 	Antwoord(const Antwoord& a);
 	virtual ~Antwoord();
 	bool isAntwoordCorrect();

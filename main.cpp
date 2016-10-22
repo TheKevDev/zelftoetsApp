@@ -10,6 +10,7 @@
 #include "Onderwerp.hpp"
 #include "Course.hpp"
 #include "Semester.hpp"
+#include "Antwoord.hpp"
 
 int main() {
 	//Onderwerpen maken
@@ -34,6 +35,7 @@ int main() {
 	Semester s3("OSM", 2);
 
 	//Onderwerpen toevoegen aan courses
+	c1.addOnderwerp(Onderwerp("Arrays", 0));
 	c1.addOnderwerp(o1);
 	c1.addOnderwerp(o2);
 	c2.addOnderwerp(o3);
@@ -50,7 +52,57 @@ int main() {
 	s3.addCourse(c4);
 
 
-	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel meter is een km?",3,(Antwoord(A,"1000",true),Antwoord(B,"2000"))));
+	//ADD MEERKEUZE VRAGEN AAN ONDERWEP o1
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel meter is een km?",3,std::vector<Antwoord>{
+		Antwoord(Antwoord::Keuzes::A,"1000",true),
+		Antwoord(Antwoord::Keuzes::B,"300"),
+		Antwoord(Antwoord::Keuzes::C,"3000")
+	}));
+
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel centimeter is een km?",3,std::vector<Antwoord>{
+		Antwoord(Antwoord::Keuzes::A,"5000"),
+		Antwoord(Antwoord::Keuzes::B,"200"),
+		Antwoord(Antwoord::Keuzes::C,"100000",true)
+	}));
+
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel centimer is een m?",3,std::vector<Antwoord>{
+		Antwoord(Antwoord::Keuzes::A,"100",true),
+		Antwoord(Antwoord::Keuzes::B,"567"),
+		Antwoord(Antwoord::Keuzes::C,"666")
+	}));
+
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel millimeter is een m?",3,std::vector<Antwoord>{
+		Antwoord(Antwoord::Keuzes::A,"1001"),
+		Antwoord(Antwoord::Keuzes::B,"1000",true),
+		Antwoord(Antwoord::Keuzes::C,"999")
+	}));
+
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel inch is een km?",3,std::vector<Antwoord>{
+		Antwoord(Antwoord::Keuzes::A,"Dat reken ik niet uit",true),
+		Antwoord(Antwoord::Keuzes::B,"300"),
+		Antwoord(Antwoord::Keuzes::C,"39370")
+	}));
+
+	//ADD OPEN VRAGEN AAN ONDERWEP o1
+	o1.addOpenVraag(OpenVraag("Leg het verschil van een appel en een peer uit?",3,std::vector<std::string>{
+			"rond", "smaak", "geur"
+		}));
+
+	o1.addOpenVraag(OpenVraag("Geef je mening over PHP?",3,std::vector<std::string>{
+			"leuk","praktisch","makkelijk"
+		}));
+
+	o1.addOpenVraag(OpenVraag("Hoeveel open vragen zitten er in deze toets?",3,std::vector<std::string>{
+			"5"
+		}));
+
+	o1.addOpenVraag(OpenVraag("Hoeveel meerkeuze vragen zitten er in deze toets?",3,std::vector<std::string>{
+			"5"
+		}));
+
+	o1.addOpenVraag(OpenVraag("Wanneer komt sinterklaas naar Nederland?",3,std::vector<std::string>{
+			"November"
+		}));
 
 	return 0;
 }

@@ -6,19 +6,31 @@
  */
 
 #include "Toets.hpp"
+#include "Onderwerp.hpp"
 
-Toets::Toets()
+
+#include <algorithm>    // std::random_shuffle
+
+Toets::Toets(const Onderwerp& o)
+//:o(aO)
 {
-	// TODO Auto-generated constructor stub
+	for(unsigned char i = 0; i<5;i++){
+		toetsVragen.push_back(o.getMeerkeuzeVraag());
+	}
 
+	for(unsigned char i = 0; i<5;i++){
+		toetsVragen.push_back(o.getOpenVraag());
+	}
+
+	//Shuffle de vector
+	//std::random_shuffle (toetsVragen.begin(), toetsVragen.end());
 }
 
 Toets::~Toets()
 {
-	// TODO Auto-generated destructor stub
 }
 
 const Vraag& Toets::getVraag()
 {
-	return 1;
+	return toetsVragen.front();
 }

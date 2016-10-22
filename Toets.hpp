@@ -8,14 +8,21 @@
 #ifndef TOETS_HPP_
 #define TOETS_HPP_
 
+#include <vector>
+
 #include "Vraag.hpp"
+
+
+class Onderwerp;
 
 class Toets
 {
 public:
-	Toets();
+	Toets(const Onderwerp& o);
 	virtual ~Toets();
 	const Vraag& getVraag();
+private:
+	std::vector<Vraag> toetsVragen;
 };
 
 #endif /* TOETS_HPP_ */
