@@ -20,7 +20,7 @@ class Semester
 public:
 	Semester(const std::string& aNaam, const unsigned short aSemesterID);
 	virtual ~Semester();
-	void addCourse(Course c);
+	void addCourse(const Course& c);
 	Course kiesCourse();
 private:
 	std::string naam;
