@@ -7,11 +7,16 @@
 
 #include "Antwoord.hpp"
 
-Antwoord::Antwoord(const std::string& aAntwoord,bool aCorrect)
-:antwoord(aAntwoord),correct(aCorrect)
+Antwoord::Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect)
+:id(anID),antwoord(aAntwoord),correct(aCorrect)
 {
 	// TODO Auto-generated constructor stub
 
+}
+
+Antwoord::Antwoord(const Antwoord& a)
+:id(a.id),antwoord(a.antwoord),correct(a.correct)
+{
 }
 
 Antwoord::~Antwoord()
@@ -19,3 +24,16 @@ Antwoord::~Antwoord()
 	// TODO Auto-generated destructor stub
 }
 
+const Antwoord& Antwoord::operator=(const Antwoord& a) {
+	if(this != &a) {
+		this->id = a.id;
+		this->antwoord = a.antwoord;
+		this->correct = a.correct;
+	}
+	return *this;
+}
+
+bool Antwoord::isCorrect() const
+{
+	return correct;
+}

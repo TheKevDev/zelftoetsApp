@@ -18,3 +18,6 @@ OpenVraag::~OpenVraag()
 	// TODO Auto-generated destructor stub
 }
 
+bool OpenVraag::beantwoordVraag(std::string antwoord){
+	return false;
+}

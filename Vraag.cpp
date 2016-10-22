@@ -10,6 +10,11 @@
 Vraag::Vraag(const std::string& aVraag,unsigned char aComplexiteit)
 :vraag(aVraag), complexiteit(aComplexiteit)
 {
+}
+
+Vraag::Vraag(const Vraag& v)
+:vraag(v.vraag), complexiteit(v.complexiteit)
+{
 
 }
 
@@ -24,4 +29,12 @@ void Vraag::printVraag()
 
 const std::string&  Vraag::getVraag() {
 	return vraag;
+}
+
+const Vraag& Vraag::operator=(const Vraag& v) {
+	if(this!=&v) {
+		this->vraag = v.vraag;
+		this->complexiteit = v.complexiteit;
+	}
+	return *this;
 }

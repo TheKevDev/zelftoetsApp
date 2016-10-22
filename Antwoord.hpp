@@ -13,10 +13,16 @@
 class Antwoord
 {
 public:
-	Antwoord(const std::string& aAntwoord,bool aCorrect=false);
+	enum Keuzes {A,B,C,D};
+	Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect);
+	Antwoord(const Antwoord& a);
 	virtual ~Antwoord();
 	bool isAntwoordCorrect();
+	const Antwoord& operator=(const Antwoord& a);
+	bool isCorrect() const;
+
 private:
+	Keuzes id;
 	std::string antwoord;
 	bool correct;
 };

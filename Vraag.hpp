@@ -15,9 +15,11 @@ class Vraag:public IVraag
 {
 public:
 	Vraag(const std::string& aVraag,unsigned char aComplexiteit);
+	Vraag(const Vraag& v);
 	virtual ~Vraag();
 	void printVraag();
 	/*virtual*/const std::string& getVraag();
+	const Vraag& operator=(const Vraag& v);
 private:
 	std::string vraag;
 	unsigned char complexiteit;

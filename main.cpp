@@ -50,7 +50,7 @@ int main() {
 	s3.addCourse(c4);
 
 
-	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel meter is een km?",3,(Antwoord("1000",true),Antwoord("2000"))));
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel meter is een km?",3,(Antwoord(A,"1000",true),Antwoord(B,"2000"))));
 
 	return 0;
 }

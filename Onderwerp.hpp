@@ -12,8 +12,11 @@
 #include <vector>
 
 #include "Toets.hpp"
+#include "MeerkeuzeVraag.hpp"
+#include "OpenVraag.hpp"
 
 //class Toets;
+class Vraag;
 
 class Onderwerp
 {
@@ -21,13 +24,13 @@ public:
 	Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID);
 	virtual ~Onderwerp();
 	Toets maakToets();
-	void addMeerkeuzeVraag(const Vraag& aVraag);
-	void addOpenVraag(const Vraag& aVraag);
+	void addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag);
+	void addOpenVraag(const OpenVraag& aVraag);
 private:
 	std::string naam;
 	long onderwerpID;
-	std::vector<Vraag> meerkeuzeVragen;
-	std::vector<Vraag> openVragen;
+	std::vector<MeerkeuzeVraag> meerkeuzeVragen;
+	std::vector<OpenVraag> openVragen;
 };
 
 #endif /* ONDERWERP_HPP_ */
