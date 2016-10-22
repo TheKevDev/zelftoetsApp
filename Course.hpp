@@ -13,8 +13,6 @@
 
 #include "Onderwerp.hpp"
 
-class Onderwerp;
-
 class Course
 {
 public:

@@ -13,7 +13,7 @@
 
 #include "Toets.hpp"
 
-class Toets;
+//class Toets;
 
 class Onderwerp
 {

@@ -15,10 +15,11 @@
 class MeerkeuzeVraag:public Vraag
 {
 public:
-	MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit);
+	MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit,const std::vector<Antwoord>& aAntwoordenLijst);
 	virtual ~MeerkeuzeVraag();
 	/*virtual*/ bool beantwoordVraag(std::string antwoord);
 private:
+	std::vector<Antwoord> antwoordenLijst;
 };
 
 #endif /* MEERKEUZEVRAAG_HPP_ */

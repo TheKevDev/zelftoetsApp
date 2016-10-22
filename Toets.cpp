@@ -18,6 +18,7 @@ Toets::~Toets()
 	// TODO Auto-generated destructor stub
 }
 
-Vraag Toets::getVraag()
+const Vraag& Toets::getVraag()
 {
+	return 1;
 }

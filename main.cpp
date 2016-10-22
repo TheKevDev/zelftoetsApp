@@ -49,6 +49,9 @@ int main() {
 	s2.addCourse(c3);
 	s3.addCourse(c4);
 
+
+	o1.addMeerkeuzeVraag(MeerkeuzeVraag("Hoeveel meter is een km?",3,(Antwoord("1000",true),Antwoord("2000"))));
+
 	return 0;
 }
 

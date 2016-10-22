@@ -7,8 +7,8 @@
 
 #include "MeerkeuzeVraag.hpp"
 
-MeerkeuzeVraag::MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit)
-:Vraag(aVraag,aComplexiteit)
+MeerkeuzeVraag::MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit,const std::vector<Antwoord>& aAntwoordenLijst)
+:Vraag(aVraag,aComplexiteit),antwoordenLijst(aAntwoordenLijst)
 {
 	// TODO Auto-generated constructor stub
 
