@@ -19,7 +19,7 @@ MeerkeuzeVraag::~MeerkeuzeVraag()
 	// TODO Auto-generated destructor stub
 }
 
-bool MeerkeuzeVraag::isAntwoordCorrect()
-{
+
+bool MeerkeuzeVraag::beantwoordVraag(std::string antwoord){
 	return false;
 }

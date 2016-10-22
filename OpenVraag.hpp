@@ -11,6 +11,8 @@
 #include <vector>
 #include <string>
 
+#include "Vraag.hpp"
+
 class OpenVraag:public Vraag
 {
 public:

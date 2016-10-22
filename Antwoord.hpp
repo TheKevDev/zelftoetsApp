@@ -15,6 +15,7 @@ class Antwoord
 public:
 	Antwoord(const std::string& aAntwoord,bool aCorrect);
 	virtual ~Antwoord();
+	bool isAntwoordCorrect();
 private:
 	std::string antwoord;
 	bool correct;

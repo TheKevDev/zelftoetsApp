@@ -21,3 +21,7 @@ Vraag::~Vraag()
 void Vraag::printVraag()
 {
 }
+
+const std::string&  Vraag::getVraag() {
+	return vraag;
+}

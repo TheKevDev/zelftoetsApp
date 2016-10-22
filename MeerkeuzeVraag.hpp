@@ -17,7 +17,7 @@ class MeerkeuzeVraag:public Vraag
 public:
 	MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit);
 	virtual ~MeerkeuzeVraag();
-	bool isAntwoordCorrect();
+	/*virtual*/ bool beantwoordVraag(std::string antwoord);
 private:
 };
 

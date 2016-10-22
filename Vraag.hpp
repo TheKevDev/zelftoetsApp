@@ -17,6 +17,7 @@ public:
 	Vraag(const std::string& aVraag,unsigned char aComplexiteit);
 	virtual ~Vraag();
 	void printVraag();
+	/*virtual*/const std::string& getVraag();
 private:
 	std::string vraag;
 	unsigned char complexiteit;
