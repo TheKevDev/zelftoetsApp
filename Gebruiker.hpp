@@ -13,7 +13,7 @@
 
 #include "Vraag.hpp"
 
-class Vraag;
+//class Vraag;
 
 class Gebruiker
 {

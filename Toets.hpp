@@ -10,14 +10,12 @@
 
 #include "Vraag.hpp"
 
-class Vraag;
-
 class Toets
 {
 public:
 	Toets();
 	virtual ~Toets();
-	Vraag getVraag();
+	const Vraag& getVraag();
 };
 
 #endif /* TOETS_HPP_ */

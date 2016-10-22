@@ -13,7 +13,7 @@
 
 #include "Course.hpp"
 
-class Course;
+//class Course;
 
 class Semester
 {

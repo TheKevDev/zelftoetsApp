@@ -21,6 +21,7 @@ Course::~Course()
 
 Onderwerp Course::kiesOnderwerp()
 {
+	return courseOnderwerpen.front();
 }
 
 void Course::addOnderwerp(const Onderwerp& o)
