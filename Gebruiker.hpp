@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 #include "Vraag.hpp"
 #include "Semester.hpp"
@@ -40,6 +41,9 @@ public:
 	 */
 	std::string getAntwoordGebruiker();
 	void gebruikApp();
+	const std::string& getUsername() const;
+	const std::string& getWachtwoord() const;
+
 private:
 	std::vector<Semester> beschikbareSemesters;
 	std::string username;

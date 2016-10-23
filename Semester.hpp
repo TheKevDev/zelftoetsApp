@@ -23,6 +23,7 @@ public:
 	void addCourse(const Course& c);
 	Course kiesCourse();
 	const std::string& getNaam() const;
+	long getSemesterId() const;
 
 private:
 	std::string naam;

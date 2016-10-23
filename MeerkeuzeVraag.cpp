@@ -32,7 +32,7 @@ const MeerkeuzeVraag& MeerkeuzeVraag::operator=(const MeerkeuzeVraag& m){
 
 bool MeerkeuzeVraag::beantwoordVraag(std::string antwoord){
 	std::cout<<__PRETTY_FUNCTION__<<std::endl;
-	return antwoordenLijst.at().isCorrect();
+//	return antwoordenLijst.at().isCorrect();
 }
 
 std::string& MeerkeuzeVraag::getVraag(){

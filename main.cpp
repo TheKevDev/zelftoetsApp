@@ -17,8 +17,11 @@
 
 int main()
 {
+	std::vector<Gebruiker> gebruikers;
+
 	//Gebruiker maken
 	Gebruiker g1("Student", "Gehaktbal13");
+	gebruikers.push_back(g1);
 
 	//Onderwerpen maken
 	Onderwerp o1("Arrays", 0);
@@ -124,18 +127,67 @@ int main()
 					std::vector<std::string>
 					{ "November" }));
 
-	//MAAK GEBRUIKER AAN
-	Gebruiker g ("Nico", "Wachtwoord");
-	o1.maakToets();
 
-	//FOR LOOP HIER OVER DE GEHELE TOETS
-	std::cout<<o1.getToets()->getVraag()->getVraag()<<std::endl;
-
-	std::string s = g.getAntwoordGebruiker();
-
-	if(!o1.getToets()->getVraag()->beantwoordVraag(s)) {
-		std::cout<<"fout"<<std::endl;
+	std::cout << "Welkom bij de zelftoetsapplicatie." << std::endl;
+	std::string givenUsername;
+	std::string givenPassword;
+	std::cout << "Gebruikersnaam: ";
+	std::cin >> givenUsername;
+	std::cout << "Wachtwoord: ";
+//	DIT IS STUK.
+//  /usr/include/termios.h:35:1: error: expected unqualified-id before string constant
+//
+//
+//
+//#ifdef _WIN32
+//#include <windows.h>
+//	HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE);
+//	SetConsoleMode(hStdin, 0 & (~ENABLE_ECHO_INPUT));
+//	std::cin >> givenPassword;
+//	SetConsoleMode(hStdin, 1);
+//#else
+//#include <termios.h>
+//#include <unistd.h>
+//	std::termios oldt;
+//	tcgetattr(STDIN_FILENO, &oldt);
+//	termios newt = oldt;
+//	newt.c_lflag &= ~ECHO;
+//	tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+//	std::cin >> givenPassword;
+//	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+//#endif
+	std::cin >> givenPassword;
+	for (auto &gebruiker : gebruikers)
+	{
+		if (givenUsername == gebruiker.getUsername())
+		{
+			if (givenPassword == gebruiker.getWachtwoord())
+			{
+				gebruiker.gebruikApp();
+			}
+			else
+			{
+				std::cout << "Het opgegeven wachtwoord is incorrect" << std::endl;
+			}
+		}
+		else
+		{
+			std::cout << "De opgegeven gebruikersnaam is incorrect" << std::endl;
+		}
 	}
+
+
+
+	//MAAK GEBRUIKER AAN
+//	Gebruiker g ("Nico", "Wachtwoord");
+//	o1.maakToets();
+//
+//	//FOR LOOP HIER OVER DE GEHELE TOETS
+//	std::cout<<o1.getToets()->getVraag()->getVraag()<<std::endl;
+//
+//	if(!o1.getToets()->getVraag()->beantwoordVraag(s)) {
+//		std::cout<<"fout"<<std::endl;
+//	}
 	return 0;
 }
 
