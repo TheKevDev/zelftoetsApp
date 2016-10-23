@@ -12,6 +12,7 @@
 #include "Semester.hpp"
 #include "Antwoord.hpp"
 #include "Toets.hpp"
+#include "Gebruiker.hpp"
 
 #include <iostream>
 
@@ -107,10 +108,18 @@ int main() {
 			"November"
 		}));
 
-
+	//MAAK GEBRUIKER AAN
+	Gebruiker g ("Nico", "Wachtwoord");
 	o1.maakToets();
 
+	//FOR LOOP HIER OVER DE GEHELE TOETS
 	std::cout<<o1.getToets()->getVraag().getVraag()<<std::endl;
+
+	std::string s = g.getAntwoordGebruiker();
+
+	if(!o1.getToets()->getVraag().beantwoordVraag(s)) {
+		std::cout<<"fout"<<std::endl;
+	}
 
 	return 0;
 }

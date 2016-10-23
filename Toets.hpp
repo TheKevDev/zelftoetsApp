@@ -9,6 +9,7 @@
 #define TOETS_HPP_
 
 #include <vector>
+#include <memory>
 
 #include "Vraag.hpp"
 

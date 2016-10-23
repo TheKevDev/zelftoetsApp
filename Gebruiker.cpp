@@ -7,6 +7,8 @@
 
 #include "Gebruiker.hpp"
 
+#include <iostream>
+
 Gebruiker::Gebruiker(const std::string& aUsername, const std::string& aWachtwoord)
 :username(aUsername),wachtwoord(aWachtwoord),score(0)
 {
@@ -28,7 +30,10 @@ void Gebruiker::addGebruik()
 
 std::string Gebruiker::getAntwoordGebruiker()
 {
-	return "";
+	std::string s;
+	std::cout<<"Antwoord: ";
+	std::cin >> s;
+	return s;
 }
 
 void Gebruiker::gebruikApp()
