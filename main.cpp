@@ -11,6 +11,9 @@
 #include "Course.hpp"
 #include "Semester.hpp"
 #include "Antwoord.hpp"
+#include "Toets.hpp"
+
+#include <iostream>
 
 int main() {
 	//Onderwerpen maken
@@ -103,6 +106,11 @@ int main() {
 	o1.addOpenVraag(OpenVraag("Wanneer komt sinterklaas naar Nederland?",3,std::vector<std::string>{
 			"November"
 		}));
+
+
+	o1.maakToets();
+
+	std::cout<<o1.getToets()->getVraag().getVraag()<<std::endl;
 
 	return 0;
 }

@@ -20,7 +20,7 @@ class Toets
 public:
 	Toets(const Onderwerp& o);
 	virtual ~Toets();
-	const Vraag& getVraag();
+	Vraag& getVraag();
 private:
 	std::vector<Vraag> toetsVragen;
 };

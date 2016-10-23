@@ -30,7 +30,7 @@ Toets::~Toets()
 {
 }
 
-const Vraag& Toets::getVraag()
+Vraag& Toets::getVraag()
 {
 	return toetsVragen.front();
 }

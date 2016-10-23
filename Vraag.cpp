@@ -27,7 +27,7 @@ void Vraag::printVraag()
 {
 }
 
-const std::string&  Vraag::getVraag() {
+std::string&  Vraag::getVraag() {
 	return vraag;
 }
 
