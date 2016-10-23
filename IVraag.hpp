@@ -21,7 +21,7 @@ class IVraag
 public:
 	virtual ~IVraag() {};
 	virtual const std::string& getVraag()=0;
-	virtual bool beantwoordVraag(std::string antwoord)=0;
+	//virtual bool beantwoordVraag(std::string antwoord)=0;
 };
 
 #endif /* IVRAAG_HPP_ */

@@ -7,8 +7,10 @@
 
 #include "Onderwerp.hpp"
 
+#include <iostream>
+
 Onderwerp::Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID)
-:naam(aNaam),onderwerpID(aOnderwerpID)
+:naam(aNaam),onderwerpID(aOnderwerpID),toets(nullptr)
 {
 	// TODO Auto-generated constructor stub
 
@@ -19,9 +21,14 @@ Onderwerp::~Onderwerp()
 	// TODO Auto-generated destructor stub
 }
 
-const Toets Onderwerp::maakToets()
+void Onderwerp::maakToets()
 {
-	return Toets (*this);
+	if(toets == nullptr) {
+		toets = new Toets (*this);
+	}
+	else {
+		std::cout<<"Error"<<std::endl;
+	}
 }
 
 void Onderwerp::addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag)
@@ -43,4 +50,10 @@ const MeerkeuzeVraag& Onderwerp::getMeerkeuzeVraag() const
 const OpenVraag& Onderwerp::getOpenVraag() const
 {
 	return openVragen.front();
+}
+
+
+Toets* Onderwerp::getToets() const
+{
+	return toets;
 }

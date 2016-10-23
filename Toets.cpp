@@ -7,12 +7,13 @@
 
 #include "Toets.hpp"
 #include "Onderwerp.hpp"
+#include "Vraag.hpp"
 
 
 #include <algorithm>    // std::random_shuffle
+#include <memory>
 
 Toets::Toets(const Onderwerp& o)
-//:o(aO)
 {
 	for(unsigned char i = 0; i<5;i++){
 		toetsVragen.push_back(o.getMeerkeuzeVraag());
@@ -30,7 +31,7 @@ Toets::~Toets()
 {
 }
 
-const Vraag& Toets::getVraag()
+Vraag& Toets::getVraag()
 {
 	return toetsVragen.front();
 }

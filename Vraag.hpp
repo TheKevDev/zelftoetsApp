@@ -18,7 +18,7 @@ public:
 	Vraag(const Vraag& v);
 	virtual ~Vraag();
 	void printVraag();
-	/*virtual*/const std::string& getVraag();
+	/*virtual*/ std::string& getVraag();
 	/*virtual*/ bool beantwoordVraag(std::string antwoord){return false;};
 	const Vraag& operator=(const Vraag& v);
 private:

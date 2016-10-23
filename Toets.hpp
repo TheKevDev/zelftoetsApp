@@ -9,6 +9,7 @@
 #define TOETS_HPP_
 
 #include <vector>
+#include <memory>
 
 #include "Vraag.hpp"
 
@@ -20,7 +21,7 @@ class Toets
 public:
 	Toets(const Onderwerp& o);
 	virtual ~Toets();
-	const Vraag& getVraag();
+	Vraag& getVraag();
 private:
 	std::vector<Vraag> toetsVragen;
 };

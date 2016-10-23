@@ -6,17 +6,14 @@
  */
 
 #include <vector>
+#include <iostream>
 
 #include "Onderwerp.hpp"
 #include "Course.hpp"
 #include "Semester.hpp"
 #include "Antwoord.hpp"
 #include "Gebruiker.hpp"
-
-void create()
-{
-
-}
+#include "Toets.hpp"
 
 int main()
 {
@@ -127,8 +124,18 @@ int main()
 					std::vector<std::string>
 					{ "November" }));
 
+	//MAAK GEBRUIKER AAN
+	Gebruiker g ("Nico", "Wachtwoord");
+	o1.maakToets();
 
-	g1.gebruikApp();
+	//FOR LOOP HIER OVER DE GEHELE TOETS
+	std::cout<<o1.getToets()->getVraag().getVraag()<<std::endl;
+
+	std::string s = g.getAntwoordGebruiker();
+
+	if(!o1.getToets()->getVraag().beantwoordVraag(s)) {
+		std::cout<<"fout"<<std::endl;
+	}
 	return 0;
 }
 
