@@ -9,6 +9,7 @@
 #define VRAAG_HPP_
 
 #include <string>
+#include <iostream>
 #include "IVraag.hpp"
 
 class Vraag:public IVraag
@@ -18,11 +19,11 @@ public:
 	Vraag(const Vraag& v);
 	virtual ~Vraag();
 	void printVraag();
-	/*virtual*/ std::string& getVraag();
-	/*virtual*/ bool beantwoordVraag(std::string antwoord){return false;};
+	virtual std::string& getVraag();
+	virtual bool beantwoordVraag(std::string antwoord){std::cout<<__PRETTY_FUNCTION__<<std::endl; return false;};
 	const Vraag& operator=(const Vraag& v);
 private:
-	std::string vraag;
+	std::string mkVraag;
 	unsigned char complexiteit;
 };
 

@@ -19,11 +19,13 @@ class MeerkeuzeVraag:public Vraag
 public:
 	MeerkeuzeVraag(const std::string& aVraag,unsigned char aComplexiteit,const std::vector<Antwoord>& aAntwoordenLijst);
 	virtual ~MeerkeuzeVraag();
+	/*virtual*/ std::string& getVraag();
 	/*virtual*/ bool beantwoordVraag(std::string antwoord);
 	MeerkeuzeVraag(const MeerkeuzeVraag& m);
 	const MeerkeuzeVraag& operator=(const MeerkeuzeVraag& m);
 private:
 	std::vector<Antwoord> antwoordenLijst;
+	std::string mkVraag = "";
 };
 
 #endif /* MEERKEUZEVRAAG_HPP_ */

@@ -21,9 +21,9 @@ class Toets
 public:
 	Toets(const Onderwerp& o);
 	virtual ~Toets();
-	Vraag& getVraag();
+	Vraag* getVraag();
 private:
-	std::vector<Vraag> toetsVragen;
+	std::vector<Vraag*> toetsVragen;
 };
 
 #endif /* TOETS_HPP_ */

@@ -31,5 +31,16 @@ const MeerkeuzeVraag& MeerkeuzeVraag::operator=(const MeerkeuzeVraag& m){
 }
 
 bool MeerkeuzeVraag::beantwoordVraag(std::string antwoord){
-	return antwoordenLijst.at(stoi(antwoord)).isCorrect();
+	std::cout<<__PRETTY_FUNCTION__<<std::endl;
+	return antwoordenLijst.at().isCorrect();
+}
+
+std::string& MeerkeuzeVraag::getVraag(){
+	mkVraag = Vraag::getVraag();
+	mkVraag+='\n';
+	for(Antwoord a: antwoordenLijst){
+		mkVraag+=a.getAntwoord();
+		mkVraag+='\n';
+	}
+	return mkVraag;
 }

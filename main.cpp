@@ -129,11 +129,11 @@ int main()
 	o1.maakToets();
 
 	//FOR LOOP HIER OVER DE GEHELE TOETS
-	std::cout<<o1.getToets()->getVraag().getVraag()<<std::endl;
+	std::cout<<o1.getToets()->getVraag()->getVraag()<<std::endl;
 
 	std::string s = g.getAntwoordGebruiker();
 
-	if(!o1.getToets()->getVraag().beantwoordVraag(s)) {
+	if(!o1.getToets()->getVraag()->beantwoordVraag(s)) {
 		std::cout<<"fout"<<std::endl;
 	}
 	return 0;

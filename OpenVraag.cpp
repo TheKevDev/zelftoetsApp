@@ -19,6 +19,7 @@ OpenVraag::~OpenVraag()
 }
 
 bool OpenVraag::beantwoordVraag(std::string antwoord){
+	std::cout<<__PRETTY_FUNCTION__<<std::endl;
 	unsigned long aantalKernWoordenGevonden = 0;
 	for(std::string& woord:kernwoorden){
 		std::size_t found = antwoord.find(woord);

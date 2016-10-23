@@ -6,6 +6,7 @@
  */
 
 #include "Antwoord.hpp"
+#include <iostream>
 
 Antwoord::Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect)
 :id(anID),antwoord(aAntwoord),correct(aCorrect)
@@ -36,4 +37,18 @@ const Antwoord& Antwoord::operator=(const Antwoord& a) {
 bool Antwoord::isCorrect() const
 {
 	return correct;
+}
+
+std::string Antwoord::getAntwoord() {
+	return  enumConversion.at(id) + ": " + antwoord;
+}
+
+unsigned short Antwoord::getEnumConversion(const std::string& value) const
+{
+	std::map<Antwoord::Keuzes, std::string>::iterator it;
+	  it = enumConversion.find(value);
+	  if (it != enumConversion.end()) {
+		  return it->first;
+	  }
+
 }

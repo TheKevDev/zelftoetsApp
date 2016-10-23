@@ -8,12 +8,12 @@
 #include "Vraag.hpp"
 
 Vraag::Vraag(const std::string& aVraag,unsigned char aComplexiteit)
-:vraag(aVraag), complexiteit(aComplexiteit)
+:mkVraag(aVraag), complexiteit(aComplexiteit)
 {
 }
 
 Vraag::Vraag(const Vraag& v)
-:vraag(v.vraag), complexiteit(v.complexiteit)
+:mkVraag(v.mkVraag), complexiteit(v.complexiteit)
 {
 
 }
@@ -28,12 +28,12 @@ void Vraag::printVraag()
 }
 
 std::string&  Vraag::getVraag() {
-	return vraag;
+	return mkVraag;
 }
 
 const Vraag& Vraag::operator=(const Vraag& v) {
 	if(this!=&v) {
-		this->vraag = v.vraag;
+		this->mkVraag = v.mkVraag;
 		this->complexiteit = v.complexiteit;
 	}
 	return *this;
