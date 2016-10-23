@@ -10,8 +10,10 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include "Vraag.hpp"
+#include "Semester.hpp"
 
 //class Vraag;
 
@@ -21,13 +23,17 @@ public:
 	Gebruiker(const std::string& aUsername, const std::string& aWachtwoord);
 	virtual ~Gebruiker();
 	/**
+	 * Functie voegt een semester toe aan de lijst met semesters voor de gebruiker
+	 */
+	void addSemester(const Semester& s);
+	/**
 	 * Functie voegt de aantal gescoorde punten toe.
 	 */
-	void addScore();
+	void addScore(const char s);
 	/**
 	 * Functie voegt de vraag die beantwoord is door de gebruiker toe aan zijn gebruik
 	 */
-	void addGebruik();
+	void addGebruik(const Vraag& v);
 	/**
 	 * Functie die de input van de gebruiker inleest.
 	 * @return De input van de gebruiker
@@ -35,6 +41,7 @@ public:
 	std::string getAntwoordGebruiker();
 	void gebruikApp();
 private:
+	std::vector<Semester> beschikbareSemesters;
 	std::string username;
 	std::string wachtwoord;
 	unsigned long score;

@@ -18,12 +18,14 @@ Gebruiker::~Gebruiker()
 	// TODO Auto-generated destructor stub
 }
 
-void Gebruiker::addScore()
+void Gebruiker::addScore(const char s)
 {
+	score += s;
 }
 
-void Gebruiker::addGebruik()
+void Gebruiker::addGebruik(const Vraag& v)
 {
+	gebruik.push_back(v);
 }
 
 std::string Gebruiker::getAntwoordGebruiker()
@@ -31,6 +33,23 @@ std::string Gebruiker::getAntwoordGebruiker()
 	return "";
 }
 
+void Gebruiker::addSemester(const Semester& s)
+{
+	beschikbareSemesters.push_back(s);
+}
+
 void Gebruiker::gebruikApp()
 {
+	std::cout << "Welkom bij de zelftoetsapplicatie." << std::endl;
+	std::cout << "Kies een semester uit de lijst:" << std::endl;
+	unsigned short tmpCounter = 1;
+	for (auto &semester : beschikbareSemesters)
+	{
+		std::cout << tmpCounter << ": " << semester.getNaam() << std::endl;
+		++tmpCounter;
+	}
+	unsigned short semSelected;
+	std::cin >> semSelected;
+
+	std::cout << semSelected << std::endl;
 }

@@ -27,3 +27,8 @@ void Semester::addCourse(const Course& c)
 Course Semester::kiesCourse()
 {
 }
+
+const std::string& Semester::getNaam() const
+{
+	return naam;
+}

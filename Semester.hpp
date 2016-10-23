@@ -22,6 +22,8 @@ public:
 	virtual ~Semester();
 	void addCourse(const Course& c);
 	Course kiesCourse();
+	const std::string& getNaam() const;
+
 private:
 	std::string naam;
 	long semesterID;
