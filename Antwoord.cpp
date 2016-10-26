@@ -6,7 +6,6 @@
  */
 
 #include "Antwoord.hpp"
-#include <iostream>
 
 Antwoord::Antwoord(Keuzes anID, const std::string& aAntwoord, bool aCorrect) :
 		id(anID), antwoord(aAntwoord), correct(aCorrect)

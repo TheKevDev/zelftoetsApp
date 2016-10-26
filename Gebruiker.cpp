@@ -7,8 +7,6 @@
 
 #include "Gebruiker.hpp"
 
-#include <iostream>
-
 Gebruiker::Gebruiker(const std::string& aUsername, const std::string& aWachtwoord)
 :username(aUsername),wachtwoord(aWachtwoord),score(0)
 {
@@ -46,7 +44,6 @@ void Gebruiker::addSemester(const Semester& s)
 
 void Gebruiker::gebruikApp()
 {
-	std::cout << "Welkom bij de zelftoetsapplicatie." << std::endl;
 	std::cout << "Kies een semester uit de lijst:" << std::endl;
 	unsigned short tmpCounter = 1;
 	for (auto &semester : beschikbareSemesters)
@@ -55,7 +52,23 @@ void Gebruiker::gebruikApp()
 		++tmpCounter;
 	}
 	unsigned short semSelected;
+	unsigned long index;
 	std::cin >> semSelected;
 
-	std::cout << semSelected << std::endl;
+	auto it = find_if(beschikbareSemesters.begin(), beschikbareSemesters.end(), [&semSelected](const Semester& s) {return s.getSemesterId() == semSelected;});
+	if (it != beschikbareSemesters.end())
+	{
+		index = std::distance(beschikbareSemesters.begin(), it);
+	}
+	//NIET AF
+}
+
+const std::string& Gebruiker::getUsername() const
+{
+	return username;
+}
+
+const std::string& Gebruiker::getWachtwoord() const
+{
+	return wachtwoord;
 }

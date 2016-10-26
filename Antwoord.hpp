@@ -8,6 +8,7 @@
 #ifndef ANTWOORD_HPP_
 #define ANTWOORD_HPP_
 
+#include <iostream>
 #include <string>
 #include <map>
 

@@ -32,3 +32,8 @@ const std::string& Semester::getNaam() const
 {
 	return naam;
 }
+
+long Semester::getSemesterId() const
+{
+	return semesterID;
+}
