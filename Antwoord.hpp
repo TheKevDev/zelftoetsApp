@@ -22,8 +22,6 @@ public:
 	const Antwoord& operator=(const Antwoord& a);
 	bool isCorrect() const;
 	std::string getAntwoord();
-	unsigned short getEnumConversion(const std::string& value) const;
-
 private:
 	Keuzes id;
 	std::string antwoord;

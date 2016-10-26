@@ -128,14 +128,18 @@ int main()
 	Gebruiker g ("Nico", "Wachtwoord");
 	o1.maakToets();
 
-	//FOR LOOP HIER OVER DE GEHELE TOETS
-	std::cout<<o1.getToets()->getVraag()->getVraag()<<std::endl;
 
-	std::string s = g.getAntwoordGebruiker();
 
-	if(!o1.getToets()->getVraag()->beantwoordVraag(s)) {
-		std::cout<<"fout"<<std::endl;
+	while(o1.getToets()->aantalVragen()!=0) {
+		//FOR LOOP HIER OVER DE GEHELE TOETS
+		std::cout<<o1.getToets()->getVraag()->getVraag()<<std::endl;
+		std::string s = g.getAntwoordGebruiker();
+		std::cout<<"Antwoord vd gebruiker: "<<s<<std::endl;
+		o1.getToets()->getVraag()->beantwoordVraag(s);
+		o1.getToets()->removeVraag();
 	}
+
+	std::cout<<"De toets is klaar"<<std::endl;
 	return 0;
 }
 

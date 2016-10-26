@@ -26,8 +26,8 @@ public:
 	void maakToets();
 	void addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag);
 	void addOpenVraag(const OpenVraag& aVraag);
-	const MeerkeuzeVraag& getMeerkeuzeVraag() const;
-	const OpenVraag& getOpenVraag() const;
+	const MeerkeuzeVraag& getMeerkeuzeVraag(unsigned short index) const;
+	const OpenVraag& getOpenVraag(unsigned short index) const;
 	Toets* getToets() const;
 
 private:

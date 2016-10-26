@@ -8,15 +8,15 @@
 #include "Antwoord.hpp"
 #include <iostream>
 
-Antwoord::Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect)
-:id(anID),antwoord(aAntwoord),correct(aCorrect)
+Antwoord::Antwoord(Keuzes anID, const std::string& aAntwoord, bool aCorrect) :
+		id(anID), antwoord(aAntwoord), correct(aCorrect)
 {
 	// TODO Auto-generated constructor stub
 
 }
 
-Antwoord::Antwoord(const Antwoord& a)
-:id(a.id),antwoord(a.antwoord),correct(a.correct)
+Antwoord::Antwoord(const Antwoord& a) :
+		id(a.id), antwoord(a.antwoord), correct(a.correct)
 {
 }
 
@@ -25,8 +25,10 @@ Antwoord::~Antwoord()
 	// TODO Auto-generated destructor stub
 }
 
-const Antwoord& Antwoord::operator=(const Antwoord& a) {
-	if(this != &a) {
+const Antwoord& Antwoord::operator=(const Antwoord& a)
+{
+	if (this != &a)
+	{
 		this->id = a.id;
 		this->antwoord = a.antwoord;
 		this->correct = a.correct;
@@ -39,16 +41,8 @@ bool Antwoord::isCorrect() const
 	return correct;
 }
 
-std::string Antwoord::getAntwoord() {
-	return  enumConversion.at(id) + ": " + antwoord;
-}
-
-unsigned short Antwoord::getEnumConversion(const std::string& value) const
+std::string Antwoord::getAntwoord()
 {
-	std::map<Antwoord::Keuzes, std::string>::iterator it;
-	  it = enumConversion.find(value);
-	  if (it != enumConversion.end()) {
-		  return it->first;
-	  }
-
+	return enumConversion.at(id) + ": " + antwoord;
 }
+

@@ -34,7 +34,8 @@ std::string Gebruiker::getAntwoordGebruiker()
 {
 	std::string s;
 	std::cout<<"Antwoord: ";
-	std::cin >> s;
+
+	std::getline(std::cin, s);
 	return s;
 }
 

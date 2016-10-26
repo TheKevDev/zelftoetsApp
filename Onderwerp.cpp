@@ -42,14 +42,14 @@ void Onderwerp::addOpenVraag(const OpenVraag& aVraag)
 	openVragen.push_back(aVraag);
 }
 
-const MeerkeuzeVraag& Onderwerp::getMeerkeuzeVraag() const
+const MeerkeuzeVraag& Onderwerp::getMeerkeuzeVraag(unsigned short index) const
 {
-	return meerkeuzeVragen.front();
+	return meerkeuzeVragen.at(index);
 }
 
-const OpenVraag& Onderwerp::getOpenVraag() const
+const OpenVraag& Onderwerp::getOpenVraag(unsigned short index) const
 {
-	return openVragen.front();
+	return openVragen.at(index);
 }
 
 

@@ -23,6 +23,7 @@ public:
 	/*virtual*/ bool beantwoordVraag(std::string antwoord);
 	MeerkeuzeVraag(const MeerkeuzeVraag& m);
 	const MeerkeuzeVraag& operator=(const MeerkeuzeVraag& m);
+	unsigned short getEnumConversion(const std::string& value) const;
 private:
 	std::vector<Antwoord> antwoordenLijst;
 	std::string mkVraag = "";

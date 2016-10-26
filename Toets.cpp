@@ -16,11 +16,11 @@
 Toets::Toets(const Onderwerp& o)
 {
 	for(unsigned char i = 0; i<5;i++){
-		toetsVragen.push_back(new MeerkeuzeVraag(o.getMeerkeuzeVraag()));
+		toetsVragen.push_back(new MeerkeuzeVraag(o.getMeerkeuzeVraag(i)));
 	}
 
 	for(unsigned char i = 0; i<5;i++){
-		toetsVragen.push_back(new OpenVraag(o.getOpenVraag()));
+		toetsVragen.push_back(new OpenVraag(o.getOpenVraag(i)));
 	}
 
 	//Shuffle de vector
@@ -34,4 +34,14 @@ Toets::~Toets()
 Vraag* Toets::getVraag()
 {
 	return toetsVragen.front();
+}
+
+void Toets::removeVraag() {
+	std::cout<<toetsVragen.size()<<std::endl;
+	toetsVragen.erase(toetsVragen.begin());
+	std::cout<<toetsVragen.size()<<std::endl;
+}
+
+unsigned char Toets::aantalVragen() {
+	return toetsVragen.size();
 }

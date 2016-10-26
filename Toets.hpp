@@ -22,6 +22,8 @@ public:
 	Toets(const Onderwerp& o);
 	virtual ~Toets();
 	Vraag* getVraag();
+	void removeVraag();
+	unsigned char aantalVragen();
 private:
 	std::vector<Vraag*> toetsVragen;
 };
