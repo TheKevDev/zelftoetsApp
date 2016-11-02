@@ -31,7 +31,7 @@ public:
 	 * Functie die een course selecteerd uit de course vector
 	 * @return de geselecteerde course
 	 */
-	Course& selectCourse();
+	const Course& selectCourse();
 
 	//GETTERS AND SETTERS
 	const std::string& getNaam() const;

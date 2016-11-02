@@ -28,7 +28,7 @@ public:
 	 * Functie die een onderwerp selecteerd uit de onderwerpen vector
 	 * @return het geselecteerde onderwerp
 	 */
-	Onderwerp& selectOnderwerp();
+	const Onderwerp& selectOnderwerp();
 
 	//GETTERS AND SETTERS
 	const std::vector<Onderwerp>& getCourseOnderwerpen() const;

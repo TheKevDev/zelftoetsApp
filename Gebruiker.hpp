@@ -54,7 +54,7 @@ public:
 	 * Functie die een semester selecteerd uit de semester vector
 	 * @return het geselecteerde semester
 	 */
-	Semester& selectSemester();
+	const Semester& selectSemester();
 	/**
 	 *
 	 * @param o

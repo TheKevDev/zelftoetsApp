@@ -51,7 +51,7 @@ void Gebruiker::gebruikApp()
 	std::cout << "Het programma wordt nu afgesloten." << std::endl;
 }
 
-Semester& Gebruiker::selectSemester() {
+const Semester& Gebruiker::selectSemester() {
 	std::cout << std::endl << "Kies een semester uit de lijst:" << std::endl;
 		unsigned short tmpCounter = 0;
 		for (Semester& semester : beschikbareSemesters)

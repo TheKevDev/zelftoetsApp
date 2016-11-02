@@ -30,7 +30,7 @@ void Course::addOnderwerp(const Onderwerp& o)
 	courseOnderwerpen.push_back(o);
 }
 
-Onderwerp& Course::selectOnderwerp() {
+const Onderwerp& Course::selectOnderwerp() {
 	std::cout << std::endl << "Kies een onderwep uit de lijst:" << std::endl;
 		unsigned short tmpCounter = 0;
 		for (Onderwerp& onderwerp : courseOnderwerpen)

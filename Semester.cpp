@@ -25,7 +25,7 @@ void Semester::addCourse(const Course& c)
 	semesterCourses.push_back(c);
 }
 
-Course& Semester::selectCourse() {
+const Course& Semester::selectCourse() {
 	std::cout << std::endl << "Kies een semester uit de lijst:" << std::endl;
 		unsigned short tmpCounter = 0;
 		for (Course& course : semesterCourses)
