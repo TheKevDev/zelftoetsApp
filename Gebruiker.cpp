@@ -45,91 +45,105 @@ void Gebruiker::gebruikApp()
 {
 	std::cout << std::endl << "Kies een semester uit de lijst:" << std::endl;
 	unsigned short tmpCounter = 0;
-	std::vector<Vraag*> gesteldeVragen;
-	std::vector<std::string> gegevenAntwoorden;
 	for (Semester& semester : beschikbareSemesters)
 	{
 		std::cout << tmpCounter << ": " << semester.getNaam() << std::endl;
 		++tmpCounter;
 	}
 	std::string semSelected;
-	unsigned long semIndex;
 	std::cout << "Semesternummer: ";
 	std::getline(std::cin, semSelected);
+	selectSemester(semSelected);
+	std::cout << "Het programma wordt nu afgesloten." << std::endl;
+}
 
-	auto itSem = find_if(beschikbareSemesters.begin(), beschikbareSemesters.end(), [&semSelected](const Semester& s) {return s.getSemesterId() == stoi(semSelected);});
+void Gebruiker::selectSemester(const std::string& semSelected) {
+	auto itSem = find_if(beschikbareSemesters.begin(), beschikbareSemesters.end(), [semSelected](const Semester& s) {return s.getSemesterId() == stoi(semSelected);});
 	if (itSem != beschikbareSemesters.end())
 	{
-		semIndex = std::distance(beschikbareSemesters.begin(), itSem);
+		unsigned long semIndex = std::distance(beschikbareSemesters.begin(), itSem);
 
-		std::vector<Course> sc = beschikbareSemesters.at(semIndex).getSemesterCourses();
-		tmpCounter = 0;
+		std::vector<Course> semcourses = beschikbareSemesters.at(semIndex).getSemesterCourses();
+		unsigned short tmpCounter = 0;
 		std::cout << std::endl << "Kies een course uit de lijst:" << std::endl;
-		for (Course& course : sc)
+		for (Course& course : semcourses)
 		{
 			std::cout << tmpCounter << ": " << course.getNaam() << std::endl;
 			++tmpCounter;
 		}
 		std::string courseSelected;
-		unsigned long courseIndex;
 		std::cout << "Coursenummer: ";
 		std::getline(std::cin, courseSelected);
-
-		auto itCourse = find_if(sc.begin(), sc.end(), [&courseSelected](const Course& c) {return c.getCourseId() == stoi(courseSelected);});
-		if (itCourse != sc.end())
-		{
-			courseIndex = std::distance(sc.begin(), itCourse);
-
-			std::vector<Onderwerp> co = sc.at(courseIndex).getCourseOnderwerpen();
-			tmpCounter = 0;
-			std::cout << std::endl << "Kies een onderwerp uit de lijst:" << std::endl;
-			for (Onderwerp& onderwerp : co)
-			{
-				std::cout << tmpCounter << ": " << onderwerp.getNaam() << std::endl;
-				++tmpCounter;
-			}
-			std::string onderwerpSelected;
-			unsigned long onderwerpIndex;
-			std::cout << "Onderwerpnummer: ";
-			std::getline(std::cin, onderwerpSelected);
-
-			auto itOnderwerp = find_if(co.begin(), co.end(), [&onderwerpSelected](const Onderwerp& o) {return o.getOnderwerpId() == stoi(onderwerpSelected);});
-			if (itOnderwerp != co.end())
-			{
-				onderwerpIndex = std::distance(co.begin(), itOnderwerp);
-				std::cout << std::endl;
-
-				unsigned long toetsPunten = 0;
-				co.at(onderwerpIndex).maakToets();
-				while(co.at(onderwerpIndex).getToets()->aantalVragen() != 0)
-				{
-					std::cout << std::endl;
-					std::cout << co.at(onderwerpIndex).getToets()->getVraag()->getVraagString() << std::endl;
-					addGebruik(*co.at(onderwerpIndex).getToets()->getVraag());
-					gesteldeVragen.push_back(co.at(onderwerpIndex).getToets()->getVraag());
-					std::string s = getAntwoordGebruiker();
-					gegevenAntwoorden.push_back(s);
-					if(co.at(onderwerpIndex).getToets()->getVraag()->beantwoordVraag(s))
-					{
-						addScore(co.at(onderwerpIndex).getToets()->getVraag()->getComplexiteit());
-						toetsPunten += co.at(onderwerpIndex).getToets()->getVraag()->getComplexiteit();
-					}
-					co.at(onderwerpIndex).getToets()->removeVraag();
-				}
-			}
-			else
-			{
-				std::cout << "Voer een geldig onderwerpnummer in" << std::endl;
-			}
-		}
-		else
-		{
-			std::cout << "Voer een geldig coursenummer in" << std::endl;
-		}
+		selectCourse(courseSelected, semcourses);
 	}
 	else
 	{
 		std::cout << "Voer een geldig semesternummer in" << std::endl;
+	}
+}
+
+void Gebruiker::selectCourse(const std::string& courseSelected, std::vector<Course>& sc)
+{
+	auto itCourse = find_if(sc.begin(), sc.end(), [&courseSelected](const Course& c) {return c.getCourseId() == stoi(courseSelected);});
+	if (itCourse != sc.end())
+	{
+		unsigned long courseIndex = std::distance(sc.begin(), itCourse);
+
+		std::vector<Onderwerp> courseOnderwerpen = sc.at(courseIndex).getCourseOnderwerpen();
+		unsigned short tmpCounter = 0;
+		std::cout << std::endl << "Kies een onderwerp uit de lijst:" << std::endl;
+		for (Onderwerp& onderwerp : courseOnderwerpen)
+		{
+			std::cout << tmpCounter << ": " << onderwerp.getNaam() << std::endl;
+			++tmpCounter;
+		}
+		std::string onderwerpSelected;
+		std::cout << "Onderwerpnummer: ";
+		std::getline(std::cin, onderwerpSelected);
+		selectOnderwerp(onderwerpSelected, courseOnderwerpen);
+	}
+	else
+	{
+		std::cout << "Voer een geldig onderwerpnummer in" << std::endl;
+	}
+}
+
+void Gebruiker::selectOnderwerp(const std::string& onderwerpSelected, std::vector<Onderwerp>& co)
+{
+	auto itOnderwerp = find_if(co.begin(), co.end(), [&onderwerpSelected](const Onderwerp& o) {return o.getOnderwerpId() == stoi(onderwerpSelected);});
+	if (itOnderwerp != co.end())
+	{
+		unsigned long onderwerpIndex = std::distance(co.begin(), itOnderwerp);
+		std::cout << std::endl;
+
+		doeToets(co.at(onderwerpIndex));
+	}
+	else
+	{
+		std::cout << "Voer een geldig coursenummer in" << std::endl;
+	}
+}
+
+void Gebruiker::doeToets(Onderwerp& o)
+{
+	unsigned long toetsPunten = 0;
+	std::vector<Vraag*> gesteldeVragen;
+	std::vector<std::string> gegevenAntwoorden;
+	o.maakToets();
+	while(o.getToets()->aantalVragen() != 0)
+	{
+		std::cout << std::endl;
+		std::cout << o.getToets()->getVraag()->getVraagString() << std::endl;
+		addGebruik(*o.getToets()->getVraag());
+		gesteldeVragen.push_back(o.getToets()->getVraag());
+		std::string s = getAntwoordGebruiker();
+		gegevenAntwoorden.push_back(s);
+		if(o.getToets()->getVraag()->beantwoordVraag(s))
+		{
+			addScore(o.getToets()->getVraag()->getComplexiteit());
+			toetsPunten += o.getToets()->getVraag()->getComplexiteit();
+		}
+		o.getToets()->removeVraag();
 	}
 	std::cout << "De toets is klaar." << std::endl;
 	std::cout << "Je hebt " << score << " punten behaald tijdens deze toets." << std::endl;
@@ -146,9 +160,6 @@ void Gebruiker::gebruikApp()
 			std::cout << "Correcte antwoord: " << gesteldeVragen.at(i)->correcteAntwoord() << std::endl;
 			std::cout << std::endl;
 		}
-	}
-	else {
-		std::cout << "Het programma wordt nu afgesloten." << std::endl;
 	}
 }
 
