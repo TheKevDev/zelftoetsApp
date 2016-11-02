@@ -45,3 +45,7 @@ std::string Antwoord::getAntwoord()
 	return enumConversion.at(id) + ": " + antwoord;
 }
 
+std::string Antwoord::getJuisteAntwoord()
+{
+	return antwoord;
+}

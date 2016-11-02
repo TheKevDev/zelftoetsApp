@@ -22,6 +22,7 @@ class Onderwerp
 {
 public:
 	Onderwerp(const std::string& aNaam, const unsigned short aOnderwerpID);
+	Onderwerp(const Onderwerp& o);
 	virtual ~Onderwerp();
 	void maakToets();
 	void addMeerkeuzeVraag(const MeerkeuzeVraag& aVraag);
@@ -29,6 +30,9 @@ public:
 	const MeerkeuzeVraag& getMeerkeuzeVraag(unsigned short index) const;
 	const OpenVraag& getOpenVraag(unsigned short index) const;
 	Toets* getToets() const;
+	const Onderwerp& operator=(const Onderwerp& o);
+	const std::string& getNaam() const;
+	long getOnderwerpId() const;
 
 private:
 	std::string naam;

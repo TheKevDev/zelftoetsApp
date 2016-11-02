@@ -37,9 +37,9 @@ Vraag* Toets::getVraag()
 }
 
 void Toets::removeVraag() {
-	std::cout<<toetsVragen.size()<<std::endl;
+	//std::cout<<toetsVragen.size()<<std::endl;
 	toetsVragen.erase(toetsVragen.begin());
-	std::cout<<toetsVragen.size()<<std::endl;
+	//std::cout<<toetsVragen.size()<<std::endl;
 }
 
 unsigned char Toets::aantalVragen() {

@@ -19,11 +19,13 @@ class Semester
 {
 public:
 	Semester(const std::string& aNaam, const unsigned short aSemesterID);
+	Semester(const Semester& s);
 	virtual ~Semester();
 	void addCourse(const Course& c);
-	Course kiesCourse();
 	const std::string& getNaam() const;
 	long getSemesterId() const;
+	const Semester& operator=(const Semester& s);
+	const std::vector<Course>& getSemesterCourses() const;
 
 private:
 	std::string naam;

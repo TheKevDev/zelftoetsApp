@@ -6,7 +6,6 @@
  */
 
 #include "MeerkeuzeVraag.hpp"
-#include <exception>
 
 MeerkeuzeVraag::MeerkeuzeVraag(const std::string& aVraag, unsigned char aComplexiteit, const std::vector<Antwoord>& aAntwoordenLijst) :
 		Vraag(aVraag, aComplexiteit), antwoordenLijst(aAntwoordenLijst)
@@ -35,13 +34,12 @@ const MeerkeuzeVraag& MeerkeuzeVraag::operator=(const MeerkeuzeVraag& m)
 
 bool MeerkeuzeVraag::beantwoordVraag(std::string antwoord)
 {
-	std::cout << __PRETTY_FUNCTION__ << std::endl;
 	return antwoordenLijst.at(getEnumConversion(antwoord)).isCorrect();
 }
 
-std::string& MeerkeuzeVraag::getVraag()
+std::string& MeerkeuzeVraag::getVraagString()
 {
-	mkVraag = Vraag::getVraag();
+	mkVraag = Vraag::getVraagString();
 	mkVraag += '\n';
 	for (Antwoord a : antwoordenLijst)
 	{
@@ -65,7 +63,7 @@ unsigned short MeerkeuzeVraag::getEnumConversion(const std::string& value) const
 	{
 		return 2;
 	}
-	else if (value == "D" && antwoordenLijst.size() > 3)
+	else if (value == "D")
 	{
 		return 3;
 	}
@@ -73,3 +71,15 @@ unsigned short MeerkeuzeVraag::getEnumConversion(const std::string& value) const
 		return 0;
 	}
 }
+
+std::string MeerkeuzeVraag::correcteAntwoord()
+{
+	for(Antwoord& a : antwoordenLijst)
+	{
+		if(a.isCorrect()){
+			return a.getJuisteAntwoord();
+		}
+	}
+}
+
+

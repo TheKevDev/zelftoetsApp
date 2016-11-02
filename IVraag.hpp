@@ -20,7 +20,7 @@ class IVraag
 {
 public:
 	virtual ~IVraag() {};
-	virtual const std::string& getVraag()=0;
+	virtual const std::string& getVraagString()=0;
 	//virtual bool beantwoordVraag(std::string antwoord)=0;
 };
 

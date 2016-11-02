@@ -24,10 +24,6 @@ void Semester::addCourse(const Course& c)
 	semesterCourses.push_back(c);
 }
 
-Course Semester::kiesCourse()
-{
-}
-
 const std::string& Semester::getNaam() const
 {
 	return naam;
@@ -36,4 +32,24 @@ const std::string& Semester::getNaam() const
 long Semester::getSemesterId() const
 {
 	return semesterID;
+}
+
+Semester::Semester(const Semester& s)
+:naam(s.naam), semesterID(s.semesterID), semesterCourses(s.semesterCourses)
+{
+}
+
+const Semester& Semester::operator =(const Semester& s)
+{
+	if(this!=&s) {
+		this->naam = s.naam;
+		this->semesterID = s.semesterID;
+		this->semesterCourses = s.semesterCourses;
+	}
+	return *this;
+}
+
+const std::vector<Course>& Semester::getSemesterCourses() const
+{
+	return semesterCourses;
 }

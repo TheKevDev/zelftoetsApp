@@ -19,16 +19,28 @@ OpenVraag::~OpenVraag()
 }
 
 bool OpenVraag::beantwoordVraag(std::string antwoord){
-	std::cout<<__PRETTY_FUNCTION__<<std::endl;
 	unsigned long aantalKernWoordenGevonden = 0;
-	for(std::string& woord:kernwoorden){
+	for(std::string& woord:kernwoorden)
+	{
 		std::size_t found = antwoord.find(woord);
-		if (found!=std::string::npos) {
+		if (found!=std::string::npos)
+		{
 			++aantalKernWoordenGevonden;
 		}
 	}
-	if(aantalKernWoordenGevonden == kernwoorden.size()) {
+	if(aantalKernWoordenGevonden == kernwoorden.size())
+	{
 		return false;
 	}
 	return true;
+}
+
+std::string OpenVraag::correcteAntwoord()
+{
+	std::string totaal = "";
+	for (std::string k : kernwoorden)
+	{
+		totaal.append(k);
+		totaal.append(", ");
+	}
 }

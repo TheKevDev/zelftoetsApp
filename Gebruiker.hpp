@@ -15,6 +15,8 @@
 
 #include "Vraag.hpp"
 #include "Semester.hpp"
+#include "Course.hpp"
+#include "Onderwerp.hpp"
 
 //class Vraag;
 
@@ -22,6 +24,7 @@ class Gebruiker
 {
 public:
 	Gebruiker(const std::string& aUsername, const std::string& aWachtwoord);
+	Gebruiker(const Gebruiker& g);
 	virtual ~Gebruiker();
 	/**
 	 * Functie voegt een semester toe aan de lijst met semesters voor de gebruiker
@@ -43,12 +46,12 @@ public:
 	void gebruikApp();
 	const std::string& getUsername() const;
 	const std::string& getWachtwoord() const;
-
+	const Gebruiker& operator=(const Gebruiker& g);
 private:
-	std::vector<Semester> beschikbareSemesters;
 	std::string username;
 	std::string wachtwoord;
 	unsigned long score;
+	std::vector<Semester> beschikbareSemesters;
 	std::vector<Vraag> gebruik;
 };
 

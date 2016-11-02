@@ -18,10 +18,12 @@ public:
 	Vraag(const std::string& aVraag,unsigned char aComplexiteit);
 	Vraag(const Vraag& v);
 	virtual ~Vraag();
-	void printVraag();
-	virtual std::string& getVraag();
-	virtual bool beantwoordVraag(std::string antwoord){std::cout<<__PRETTY_FUNCTION__<<std::endl; return false;};
+	virtual std::string& getVraagString();
+	virtual bool beantwoordVraag(std::string antwoord){return false;};
+	virtual std::string correcteAntwoord() {return "";};
 	const Vraag& operator=(const Vraag& v);
+	unsigned char getComplexiteit() const;
+
 private:
 	std::string mkVraag;
 	unsigned char complexiteit;

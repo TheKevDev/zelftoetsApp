@@ -57,3 +57,30 @@ Toets* Onderwerp::getToets() const
 {
 	return toets;
 }
+
+Onderwerp::Onderwerp(const Onderwerp& o)
+:naam(o.naam), onderwerpID(o.onderwerpID), meerkeuzeVragen(o.meerkeuzeVragen), openVragen(o.openVragen), toets(o.toets)
+{
+}
+
+const Onderwerp& Onderwerp::operator =(const Onderwerp& o)
+{
+	if(this!=&o) {
+		this->naam = o.naam;
+		this->onderwerpID = o.onderwerpID;
+		this->meerkeuzeVragen = o.meerkeuzeVragen;
+		this->openVragen = o.openVragen;
+		this->toets = o.toets;
+	}
+	return *this;
+}
+
+const std::string& Onderwerp::getNaam() const
+{
+	return naam;
+}
+
+long Onderwerp::getOnderwerpId() const
+{
+	return onderwerpID;
+}

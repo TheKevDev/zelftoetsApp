@@ -23,6 +23,7 @@ public:
 	const Antwoord& operator=(const Antwoord& a);
 	bool isCorrect() const;
 	std::string getAntwoord();
+	std::string getJuisteAntwoord();
 private:
 	Keuzes id;
 	std::string antwoord;

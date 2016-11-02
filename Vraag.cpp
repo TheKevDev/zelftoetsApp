@@ -23,11 +23,7 @@ Vraag::~Vraag()
 	// TODO Auto-generated destructor stub
 }
 
-void Vraag::printVraag()
-{
-}
-
-std::string&  Vraag::getVraag() {
+std::string&  Vraag::getVraagString() {
 	return mkVraag;
 }
 
@@ -37,4 +33,9 @@ const Vraag& Vraag::operator=(const Vraag& v) {
 		this->complexiteit = v.complexiteit;
 	}
 	return *this;
+}
+
+unsigned char Vraag::getComplexiteit() const
+{
+	return complexiteit;
 }
