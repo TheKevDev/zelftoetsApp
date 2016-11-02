@@ -28,14 +28,17 @@ public:
 	virtual ~Gebruiker();
 	/**
 	 * Functie voegt een semester toe aan de lijst met semesters voor de gebruiker
+	 * @param s Een reference naar de semester
 	 */
 	void addSemester(const Semester& s);
 	/**
 	 * Functie voegt de aantal gescoorde punten toe.
+	 * @param s aantal punten
 	 */
 	void addScore(const char s);
 	/**
 	 * Functie voegt de vraag die beantwoord is door de gebruiker toe aan zijn gebruik
+	 * @param v reference naar de beantwoorde vraag
 	 */
 	void addGebruik(const Vraag& v);
 	/**
@@ -43,13 +46,37 @@ public:
 	 * @return De input van de gebruiker
 	 */
 	std::string getAntwoordGebruiker();
+	/**
+	 * Functie om de app te gebruiken.
+	 */
 	void gebruikApp();
+	/**
+	 *
+	 * @param semSelected
+	 */
 	void selectSemester(const std::string& semSelected);
+	/**
+	 *
+	 * @param courseSelected
+	 * @param sc
+	 */
 	void selectCourse(const std::string& courseSelected, std::vector<Course>& sc);
+	/**
+	 *
+	 * @param onderwerpSelected
+	 * @param co
+	 */
 	void selectOnderwerp(const std::string& onderwerpSelected, std::vector<Onderwerp>& co);
+	/**
+	 *
+	 * @param o
+	 */
 	void doeToets(Onderwerp& o);
+
+	//GETTERS AND SETTERS
 	const std::string& getUsername() const;
 	const std::string& getWachtwoord() const;
+	//OPERATORS
 	const Gebruiker& operator=(const Gebruiker& g);
 private:
 	std::string username;

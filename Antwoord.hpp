@@ -16,18 +16,30 @@ class Antwoord
 {
 public:
 	enum Keuzes {A,B,C,D};
-
 	Antwoord(Keuzes anID,const std::string& aAntwoord,bool aCorrect=false);
 	Antwoord(const Antwoord& a);
 	virtual ~Antwoord();
-	const Antwoord& operator=(const Antwoord& a);
-	bool isCorrect() const;
+
+	/**
+	 * Functie geeft een string representatie van het antwoord
+	 * @return string waarin het antwoord staat.
+	 */
 	std::string getAntwoord();
-	std::string getJuisteAntwoord();
+
+	//GETTERS AND SETTERS
+	bool isCorrect() const;
+
+	//OPERATORS
+	const Antwoord& operator=(const Antwoord& a);
 private:
 	Keuzes id;
 	std::string antwoord;
 	bool correct;
+
+	/**
+	 * Deze functie zorgt ervoor dat de enumConversion map gevuld wordt zodat een enum A naar een string A wordt vertaald.
+	 * @return een map met de conversie waarden.
+	 */
 	std::map<Antwoord::Keuzes, std::string> createMap() {
 			static std::map<Antwoord::Keuzes, std::string> m;
 			m.insert(std::make_pair(Antwoord::Keuzes::A, "A"));

@@ -21,9 +21,18 @@ class Toets
 public:
 	Toets(const Onderwerp& o);
 	virtual ~Toets();
-	Vraag* getVraag();
+	/**
+	 * Functie verwijderd de eerste vraag uit de toetsvragen-vector
+	 */
 	void removeVraag();
+	/**
+	 * Functie die het aantal toetsvragen returned
+	 * @return aantal toetsvragen in de vector
+	 */
 	unsigned char aantalVragen();
+
+	//GETTERS AND SETTERS
+	Vraag* getVraag();
 private:
 	std::vector<Vraag*> toetsVragen;
 };

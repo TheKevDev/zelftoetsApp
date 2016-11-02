@@ -44,12 +44,23 @@ void Onderwerp::addOpenVraag(const OpenVraag& aVraag)
 
 const MeerkeuzeVraag& Onderwerp::getMeerkeuzeVraag(unsigned short index) const
 {
-	return meerkeuzeVragen.at(index);
+	if(meerkeuzeVragen.size() < index) {
+		return meerkeuzeVragen.at(0);
+	}else {
+		return meerkeuzeVragen.at(index);
+	}
+
 }
 
 const OpenVraag& Onderwerp::getOpenVraag(unsigned short index) const
 {
-	return openVragen.at(index);
+	if(openVragen.size() < index) {
+		return openVragen.at(0);
+	}
+	else {
+		return openVragen.at(index);
+	}
+
 }
 
 

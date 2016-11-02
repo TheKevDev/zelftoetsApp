@@ -22,7 +22,7 @@ public:
 	 * Functie die de vraag string returned
 	 * @return string waarin het attribuut vraag staat
 	 */
-	virtual std::string& getVraagString();
+	virtual std::string getVraagString();
 	/**
 	 * Functie die controleerd of de gegeven input correct is
 	 * @param antwoord ruwe string van de gebruikers input

@@ -37,9 +37,9 @@ bool MeerkeuzeVraag::beantwoordVraag(std::string antwoord)
 	return antwoordenLijst.at(getEnumConversion(antwoord)).isCorrect();
 }
 
-std::string& MeerkeuzeVraag::getVraagString()
+std::string MeerkeuzeVraag::getVraagString()
 {
-	mkVraag = Vraag::getVraagString();
+	std::string mkVraag = Vraag::getVraagString();
 	mkVraag += '\n';
 	for (Antwoord a : antwoordenLijst)
 	{
@@ -77,7 +77,7 @@ std::string MeerkeuzeVraag::correcteAntwoord()
 	for(Antwoord& a : antwoordenLijst)
 	{
 		if(a.isCorrect()){
-			return a.getJuisteAntwoord();
+			return a.getAntwoord();
 		}
 	}
 }

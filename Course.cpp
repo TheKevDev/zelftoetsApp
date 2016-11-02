@@ -19,11 +19,6 @@ Course::~Course()
 	// TODO Auto-generated destructor stub
 }
 
-Onderwerp Course::kiesOnderwerp()
-{
-	return courseOnderwerpen.front();
-}
-
 Course::Course(const Course& c)
 :naam(c.naam), courseID(c.courseID), courseOnderwerpen(c.courseOnderwerpen)
 {

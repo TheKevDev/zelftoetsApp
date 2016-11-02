@@ -21,12 +21,20 @@ public:
 	Semester(const std::string& aNaam, const unsigned short aSemesterID);
 	Semester(const Semester& s);
 	virtual ~Semester();
+
+	/**
+	 * Function that adds a course to the semester
+	 * @param c reference to a course
+	 */
 	void addCourse(const Course& c);
+
+	//GETTERS AND SETTERS
 	const std::string& getNaam() const;
 	long getSemesterId() const;
-	const Semester& operator=(const Semester& s);
 	const std::vector<Course>& getSemesterCourses() const;
 
+	//OPERATORS
+	const Semester& operator=(const Semester& s);
 private:
 	std::string naam;
 	long semesterID;

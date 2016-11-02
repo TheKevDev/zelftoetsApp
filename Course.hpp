@@ -19,13 +19,19 @@ public:
 	Course(const std::string aNaam, const unsigned short aCourseID);
 	Course(const Course& c);
 	virtual ~Course();
-	Onderwerp kiesOnderwerp();
+	/**
+	 * Functie voegt een onderwerp toe aan de course
+	 * @param o
+	 */
 	void addOnderwerp(const Onderwerp& o);
-	const Course& operator=(const Course& c);
+
+	//GETTERS AND SETTERS
 	const std::vector<Onderwerp>& getCourseOnderwerpen() const;
 	const std::string& getNaam() const;
 	unsigned short getCourseId() const;
 
+	//OPERATORS
+	const Course& operator=(const Course& c);
 private:
 	std::string naam;
 	unsigned short courseID;

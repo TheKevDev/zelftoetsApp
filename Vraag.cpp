@@ -23,7 +23,7 @@ Vraag::~Vraag()
 	// TODO Auto-generated destructor stub
 }
 
-std::string&  Vraag::getVraagString() {
+std::string  Vraag::getVraagString() {
 	return vraag;
 }
 
