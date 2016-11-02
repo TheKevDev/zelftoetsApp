@@ -44,6 +44,10 @@ public:
 	 */
 	std::string getAntwoordGebruiker();
 	void gebruikApp();
+	void selectSemester(const std::string& semSelected);
+	void selectCourse(const std::string& courseSelected, std::vector<Course>& sc);
+	void selectOnderwerp(const std::string& onderwerpSelected, std::vector<Onderwerp>& co);
+	void doeToets(Onderwerp& o);
 	const std::string& getUsername() const;
 	const std::string& getWachtwoord() const;
 	const Gebruiker& operator=(const Gebruiker& g);
