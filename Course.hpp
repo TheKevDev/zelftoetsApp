@@ -24,7 +24,10 @@ public:
 	 * @param o
 	 */
 	void addOnderwerp(const Onderwerp& o);
-
+	/**
+	 * Functie die een onderwerp selecteerd uit de onderwerpen vector
+	 * @return het geselecteerde onderwerp
+	 */
 	Onderwerp& selectOnderwerp();
 
 	//GETTERS AND SETTERS

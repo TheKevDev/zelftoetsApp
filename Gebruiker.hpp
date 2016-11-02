@@ -51,8 +51,8 @@ public:
 	 */
 	void gebruikApp();
 	/**
-	 *
-	 * @param semSelected
+	 * Functie die een semester selecteerd uit de semester vector
+	 * @return het geselecteerde semester
 	 */
 	Semester& selectSemester();
 	/**

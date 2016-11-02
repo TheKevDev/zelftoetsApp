@@ -27,7 +27,10 @@ public:
 	 * @param c reference to a course
 	 */
 	void addCourse(const Course& c);
-
+	/**
+	 * Functie die een course selecteerd uit de course vector
+	 * @return de geselecteerde course
+	 */
 	Course& selectCourse();
 
 	//GETTERS AND SETTERS
