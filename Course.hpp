@@ -25,6 +25,8 @@ public:
 	 */
 	void addOnderwerp(const Onderwerp& o);
 
+	Onderwerp& selectOnderwerp();
+
 	//GETTERS AND SETTERS
 	const std::vector<Onderwerp>& getCourseOnderwerpen() const;
 	const std::string& getNaam() const;

@@ -54,19 +54,7 @@ public:
 	 *
 	 * @param semSelected
 	 */
-	void selectSemester(const std::string& semSelected);
-	/**
-	 *
-	 * @param courseSelected
-	 * @param sc
-	 */
-	void selectCourse(const std::string& courseSelected, std::vector<Course>& sc);
-	/**
-	 *
-	 * @param onderwerpSelected
-	 * @param co
-	 */
-	void selectOnderwerp(const std::string& onderwerpSelected, std::vector<Onderwerp>& co);
+	Semester& selectSemester();
 	/**
 	 *
 	 * @param o

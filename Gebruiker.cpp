@@ -6,6 +6,7 @@
  */
 
 #include "Gebruiker.hpp"
+#include "UserInput.hpp"
 
 Gebruiker::Gebruiker(const std::string& aUsername, const std::string& aWachtwoord)
 :username(aUsername),wachtwoord(aWachtwoord),score(0)
@@ -43,86 +44,26 @@ void Gebruiker::addSemester(const Semester& s)
 
 void Gebruiker::gebruikApp()
 {
-	std::cout << std::endl << "Kies een semester uit de lijst:" << std::endl;
-	unsigned short tmpCounter = 0;
-	for (Semester& semester : beschikbareSemesters)
-	{
-		std::cout << tmpCounter << ": " << semester.getNaam() << std::endl;
-		++tmpCounter;
-	}
-	std::string semSelected;
-	std::cout << "Semesternummer: ";
-	std::getline(std::cin, semSelected);
-	selectSemester(semSelected);
+	Semester semesterSelected = selectSemester();
+	Course courseSelected = semesterSelected.selectCourse();
+	Onderwerp onderwerpSelected = courseSelected.selectOnderwerp();
+	doeToets(onderwerpSelected);
 	std::cout << "Het programma wordt nu afgesloten." << std::endl;
 }
 
-void Gebruiker::selectSemester(const std::string& semSelected) {
-	auto itSem = find_if(beschikbareSemesters.begin(), beschikbareSemesters.end(), [semSelected](const Semester& s) {return s.getSemesterId() == stoi(semSelected);});
-	if (itSem != beschikbareSemesters.end())
-	{
-		unsigned long semIndex = std::distance(beschikbareSemesters.begin(), itSem);
-
-		std::vector<Course> semcourses = beschikbareSemesters.at(semIndex).getSemesterCourses();
+Semester& Gebruiker::selectSemester() {
+	std::cout << std::endl << "Kies een semester uit de lijst:" << std::endl;
 		unsigned short tmpCounter = 0;
-		std::cout << std::endl << "Kies een course uit de lijst:" << std::endl;
-		for (Course& course : semcourses)
+		for (Semester& semester : beschikbareSemesters)
 		{
-			std::cout << tmpCounter << ": " << course.getNaam() << std::endl;
+			std::cout << tmpCounter << ": " << semester.getNaam() << std::endl;
 			++tmpCounter;
 		}
-		std::string courseSelected;
-		std::cout << "Coursenummer: ";
-		std::getline(std::cin, courseSelected);
-		selectCourse(courseSelected, semcourses);
-	}
-	else
-	{
-		std::cout << "Voer een geldig semesternummer in" << std::endl;
-	}
+		std::string userInput = UserInput::getUserInput().getInputFromUser("Semesternummer: ");
+
+	return beschikbareSemesters.at(stoi(userInput));
 }
 
-void Gebruiker::selectCourse(const std::string& courseSelected, std::vector<Course>& sc)
-{
-	auto itCourse = find_if(sc.begin(), sc.end(), [&courseSelected](const Course& c) {return c.getCourseId() == stoi(courseSelected);});
-	if (itCourse != sc.end())
-	{
-		unsigned long courseIndex = std::distance(sc.begin(), itCourse);
-
-		std::vector<Onderwerp> courseOnderwerpen = sc.at(courseIndex).getCourseOnderwerpen();
-		unsigned short tmpCounter = 0;
-		std::cout << std::endl << "Kies een onderwerp uit de lijst:" << std::endl;
-		for (Onderwerp& onderwerp : courseOnderwerpen)
-		{
-			std::cout << tmpCounter << ": " << onderwerp.getNaam() << std::endl;
-			++tmpCounter;
-		}
-		std::string onderwerpSelected;
-		std::cout << "Onderwerpnummer: ";
-		std::getline(std::cin, onderwerpSelected);
-		selectOnderwerp(onderwerpSelected, courseOnderwerpen);
-	}
-	else
-	{
-		std::cout << "Voer een geldig onderwerpnummer in" << std::endl;
-	}
-}
-
-void Gebruiker::selectOnderwerp(const std::string& onderwerpSelected, std::vector<Onderwerp>& co)
-{
-	auto itOnderwerp = find_if(co.begin(), co.end(), [&onderwerpSelected](const Onderwerp& o) {return o.getOnderwerpId() == stoi(onderwerpSelected);});
-	if (itOnderwerp != co.end())
-	{
-		unsigned long onderwerpIndex = std::distance(co.begin(), itOnderwerp);
-		std::cout << std::endl;
-
-		doeToets(co.at(onderwerpIndex));
-	}
-	else
-	{
-		std::cout << "Voer een geldig coursenummer in" << std::endl;
-	}
-}
 
 void Gebruiker::doeToets(Onderwerp& o)
 {

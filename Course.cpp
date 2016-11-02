@@ -6,6 +6,7 @@
  */
 
 #include "Course.hpp"
+#include "UserInput.hpp"
 
 Course::Course(const std::string aNaam, const unsigned short aCourseID)
 :naam(aNaam), courseID(aCourseID)
@@ -27,6 +28,19 @@ Course::Course(const Course& c)
 void Course::addOnderwerp(const Onderwerp& o)
 {
 	courseOnderwerpen.push_back(o);
+}
+
+Onderwerp& Course::selectOnderwerp() {
+	std::cout << std::endl << "Kies een onderwep uit de lijst:" << std::endl;
+		unsigned short tmpCounter = 0;
+		for (Onderwerp& onderwerp : courseOnderwerpen)
+		{
+			std::cout << tmpCounter << ": " << onderwerp.getNaam() << std::endl;
+			++tmpCounter;
+		}
+		std::string userInput = UserInput::getUserInput().getInputFromUser("OnderwerpNummer: ");
+
+	return courseOnderwerpen.at(stoi(userInput));
 }
 
 const Course& Course::operator =(const Course& c)

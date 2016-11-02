@@ -28,6 +28,8 @@ public:
 	 */
 	void addCourse(const Course& c);
 
+	Course& selectCourse();
+
 	//GETTERS AND SETTERS
 	const std::string& getNaam() const;
 	long getSemesterId() const;

@@ -6,6 +6,7 @@
  */
 
 #include "Semester.hpp"
+#include "UserInput.hpp"
 
 Semester::Semester(const std::string& aNaam, const unsigned short aSemesterID)
 :naam(aNaam),semesterID(aSemesterID)
@@ -22,6 +23,19 @@ Semester::~Semester()
 void Semester::addCourse(const Course& c)
 {
 	semesterCourses.push_back(c);
+}
+
+Course& Semester::selectCourse() {
+	std::cout << std::endl << "Kies een semester uit de lijst:" << std::endl;
+		unsigned short tmpCounter = 0;
+		for (Course& course : semesterCourses)
+		{
+			std::cout << tmpCounter << ": " << course.getNaam() << std::endl;
+			++tmpCounter;
+		}
+		std::string userInput = UserInput::getUserInput().getInputFromUser("CourseNummer: ");
+
+	return semesterCourses.at(stoi(userInput));
 }
 
 const std::string& Semester::getNaam() const
