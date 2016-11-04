@@ -80,6 +80,7 @@ std::string MeerkeuzeVraag::correcteAntwoord()
 			return a.getAntwoord();
 		}
 	}
+	return ""; //return empty string
 }
 
 

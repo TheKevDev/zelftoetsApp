@@ -41,6 +41,7 @@ std::string OpenVraag::correcteAntwoord()
 	for (std::string k : kernwoorden)
 	{
 		totaal.append(k);
-		totaal.append(", ");
+		totaal.append(" ");
 	}
+	return totaal;
 }

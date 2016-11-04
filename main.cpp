@@ -49,35 +49,40 @@ int main()
 					std::vector<Antwoord>
 					{ Antwoord(Antwoord::Keuzes::A, "1000", true), Antwoord(
 							Antwoord::Keuzes::B, "300"), Antwoord(
-							Antwoord::Keuzes::C, "3000") }));
+							Antwoord::Keuzes::C, "3000"), Antwoord(
+							Antwoord::Keuzes::D, "255") }));
 
 	o1.addMeerkeuzeVraag(
 			MeerkeuzeVraag("Hoeveel centimeter is een km?", 4,
 					std::vector<Antwoord>
 					{ Antwoord(Antwoord::Keuzes::A, "5000"), Antwoord(
 							Antwoord::Keuzes::B, "200"), Antwoord(
-							Antwoord::Keuzes::C, "100000", true) }));
+							Antwoord::Keuzes::C, "100000", true), Antwoord(
+							Antwoord::Keuzes::D, "10000") }));
 
 	o1.addMeerkeuzeVraag(
 			MeerkeuzeVraag("Hoeveel centimer is een m?", 4,
 					std::vector<Antwoord>
 					{ Antwoord(Antwoord::Keuzes::A, "100", true), Antwoord(
 							Antwoord::Keuzes::B, "567"), Antwoord(
-							Antwoord::Keuzes::C, "666") }));
+							Antwoord::Keuzes::C, "666"), Antwoord(
+							Antwoord::Keuzes::D, "256") }));
 
 	o1.addMeerkeuzeVraag(
 			MeerkeuzeVraag("Hoeveel millimeter is een m?", 4,
 					std::vector<Antwoord>
 					{ Antwoord(Antwoord::Keuzes::A, "1001"), Antwoord(
 							Antwoord::Keuzes::B, "1000", true), Antwoord(
-							Antwoord::Keuzes::C, "999") }));
+							Antwoord::Keuzes::C, "999"), Antwoord(
+							Antwoord::Keuzes::D, "998") }));
 
 	o1.addMeerkeuzeVraag(
 			MeerkeuzeVraag("Hoeveel inch is een km?", 9,
 					std::vector<Antwoord>
 					{ Antwoord(Antwoord::Keuzes::A, "Dat reken ik niet uit",
 							true), Antwoord(Antwoord::Keuzes::B, "300"),
-							Antwoord(Antwoord::Keuzes::C, "39370") }));
+							Antwoord(Antwoord::Keuzes::C, "39370"),
+							Antwoord(Antwoord::Keuzes::D, "38260")}));
 
 	//ADD OPEN VRAGEN AAN ONDERWEP o1
 	o1.addOpenVraag(
